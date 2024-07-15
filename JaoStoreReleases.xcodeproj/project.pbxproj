@@ -7,21 +7,87 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3175A2E72C42C311004F947B /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A2E62C42C311004F947B /* KeyChainService.swift */; };
+		3175A2EA2C42C3D7004F947B /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A2E92C42C3D7004F947B /* UseCase.swift */; };
+		3175A2ED2C42C5D4004F947B /* SaveItemKeyChainUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A2EC2C42C5D4004F947B /* SaveItemKeyChainUseCase.swift */; };
+		3175A2EF2C42C7EA004F947B /* GetItemKeyChainUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A2EE2C42C7EA004F947B /* GetItemKeyChainUseCase.swift */; };
+		3175A2F12C42C8D9004F947B /* SetItemKeyChainParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A2F02C42C8D9004F947B /* SetItemKeyChainParams.swift */; };
+		3175A2FA2C42DE92004F947B /* KeyFormViewInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A2F92C42DE92004F947B /* KeyFormViewInjector.swift */; };
+		3175A2FC2C42DEB2004F947B /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A2FB2C42DEB2004F947B /* Injector.swift */; };
+		3175A30B2C42EBFD004F947B /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3175A30A2C42EBFD004F947B /* Swinject */; };
+		3175A30D2C431E8E004F947B /* LocalAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A30C2C431E8E004F947B /* LocalAuthService.swift */; };
+		3175A30F2C431F2E004F947B /* LocalAuthServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A30E2C431F2E004F947B /* LocalAuthServiceImpl.swift */; };
+		3175A3112C43229B004F947B /* LocalAuthenticationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A3102C43229B004F947B /* LocalAuthenticationUseCase.swift */; };
+		3175A3162C432995004F947B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A3152C432995004F947B /* HomeView.swift */; };
+		3175A3182C4329A4004F947B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A3172C4329A4004F947B /* HomeController.swift */; };
+		3175A31A2C432A5A004F947B /* HomeViewInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A3192C432A5A004F947B /* HomeViewInjector.swift */; };
+		31774B012C40B3A2003C8670 /* KeyFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31774B002C40B3A2003C8670 /* KeyFormController.swift */; };
+		31774B052C40B415003C8670 /* KeyFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31774B042C40B415003C8670 /* KeyFormView.swift */; };
+		317EE47B2C447208004BC87B /* AppStoreHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EE47A2C447208004BC87B /* AppStoreHTTPClient.swift */; };
+		317EE47E2C4472BC004BC87B /* AppStoreEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EE47D2C4472BC004BC87B /* AppStoreEndpoints.swift */; };
+		317EE4802C44745E004BC87B /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EE47F2C44745E004BC87B /* HTTPMethods.swift */; };
+		317EE4832C4482EC004BC87B /* SwiftJWT in Frameworks */ = {isa = PBXBuildFile; productRef = 317EE4822C4482EC004BC87B /* SwiftJWT */; };
+		317EE4852C448481004BC87B /* AppStoreJWTClaims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EE4842C448481004BC87B /* AppStoreJWTClaims.swift */; };
+		317EE4872C44B3E5004BC87B /* ListAppsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EE4862C44B3E5004BC87B /* ListAppsView.swift */; };
+		317EE4892C44B3FD004BC87B /* ListAppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EE4882C44B3FD004BC87B /* ListAppsController.swift */; };
+		317EE48B2C44B481004BC87B /* ListAppsViewInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EE48A2C44B481004BC87B /* ListAppsViewInjector.swift */; };
+		317EE48D2C44B76E004BC87B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 317EE48C2C44B76E004BC87B /* .gitignore */; };
 		3192EA072C3F50C000937003 /* JaoStoreReleasesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3192EA062C3F50C000937003 /* JaoStoreReleasesApp.swift */; };
-		3192EA092C3F50C000937003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3192EA082C3F50C000937003 /* ContentView.swift */; };
-		3192EA0B2C3F50C000937003 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3192EA0A2C3F50C000937003 /* Item.swift */; };
 		3192EA0D2C3F50C100937003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3192EA0C2C3F50C100937003 /* Assets.xcassets */; };
 		3192EA102C3F50C100937003 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3192EA0F2C3F50C100937003 /* Preview Assets.xcassets */; };
+		3192EA182C3F5E9900937003 /* PrivateKeyInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3192EA172C3F5E9900937003 /* PrivateKeyInfoData.swift */; };
+		3192EA1C2C3F682F00937003 /* UTTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3192EA1B2C3F682F00937003 /* UTTypeExtension.swift */; };
+		31EBC1072C41E2B700684455 /* KeyChainServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EBC1062C41E2B700684455 /* KeyChainServiceImpl.swift */; };
+		31EBC1092C41E5F500684455 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EBC1082C41E5F500684455 /* DataExtension.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3175A2FF2C42E3F2004F947B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3175A2E62C42C311004F947B /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
+		3175A2E92C42C3D7004F947B /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		3175A2EC2C42C5D4004F947B /* SaveItemKeyChainUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveItemKeyChainUseCase.swift; sourceTree = "<group>"; };
+		3175A2EE2C42C7EA004F947B /* GetItemKeyChainUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetItemKeyChainUseCase.swift; sourceTree = "<group>"; };
+		3175A2F02C42C8D9004F947B /* SetItemKeyChainParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetItemKeyChainParams.swift; sourceTree = "<group>"; };
+		3175A2F92C42DE92004F947B /* KeyFormViewInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFormViewInjector.swift; sourceTree = "<group>"; };
+		3175A2FB2C42DEB2004F947B /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
+		3175A30C2C431E8E004F947B /* LocalAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthService.swift; sourceTree = "<group>"; };
+		3175A30E2C431F2E004F947B /* LocalAuthServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthServiceImpl.swift; sourceTree = "<group>"; };
+		3175A3102C43229B004F947B /* LocalAuthenticationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationUseCase.swift; sourceTree = "<group>"; };
+		3175A3152C432995004F947B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3175A3172C4329A4004F947B /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		3175A3192C432A5A004F947B /* HomeViewInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewInjector.swift; sourceTree = "<group>"; };
+		31774B002C40B3A2003C8670 /* KeyFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFormController.swift; sourceTree = "<group>"; };
+		31774B042C40B415003C8670 /* KeyFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFormView.swift; sourceTree = "<group>"; };
+		317EE47A2C447208004BC87B /* AppStoreHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreHTTPClient.swift; sourceTree = "<group>"; };
+		317EE47D2C4472BC004BC87B /* AppStoreEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreEndpoints.swift; sourceTree = "<group>"; };
+		317EE47F2C44745E004BC87B /* HTTPMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
+		317EE4842C448481004BC87B /* AppStoreJWTClaims.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreJWTClaims.swift; sourceTree = "<group>"; };
+		317EE4862C44B3E5004BC87B /* ListAppsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAppsView.swift; sourceTree = "<group>"; };
+		317EE4882C44B3FD004BC87B /* ListAppsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAppsController.swift; sourceTree = "<group>"; };
+		317EE48A2C44B481004BC87B /* ListAppsViewInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAppsViewInjector.swift; sourceTree = "<group>"; };
+		317EE48C2C44B76E004BC87B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		3192EA032C3F50C000937003 /* JaoStoreReleases.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JaoStoreReleases.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3192EA062C3F50C000937003 /* JaoStoreReleasesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JaoStoreReleasesApp.swift; sourceTree = "<group>"; };
-		3192EA082C3F50C000937003 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		3192EA0A2C3F50C000937003 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3192EA0C2C3F50C100937003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3192EA0F2C3F50C100937003 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3192EA112C3F50C100937003 /* JaoStoreReleases.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JaoStoreReleases.entitlements; sourceTree = "<group>"; };
+		3192EA172C3F5E9900937003 /* PrivateKeyInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeyInfoData.swift; sourceTree = "<group>"; };
+		3192EA192C3F66F700937003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3192EA1B2C3F682F00937003 /* UTTypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTTypeExtension.swift; sourceTree = "<group>"; };
+		31EBC1062C41E2B700684455 /* KeyChainServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainServiceImpl.swift; sourceTree = "<group>"; };
+		31EBC1082C41E5F500684455 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,12 +95,101 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				317EE4832C4482EC004BC87B /* SwiftJWT in Frameworks */,
+				3175A30B2C42EBFD004F947B /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3175A2E32C42C169004F947B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3192EA0E2C3F50C100937003 /* Preview Content */,
+				3192EA0C2C3F50C100937003 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3175A2E42C42C1C0004F947B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				3192EA172C3F5E9900937003 /* PrivateKeyInfoData.swift */,
+				3175A2F02C42C8D9004F947B /* SetItemKeyChainParams.swift */,
+				317EE4842C448481004BC87B /* AppStoreJWTClaims.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		3175A2E82C42C399004F947B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3175A2FB2C42DEB2004F947B /* Injector.swift */,
+				3175A2E62C42C311004F947B /* KeyChainService.swift */,
+				3175A30C2C431E8E004F947B /* LocalAuthService.swift */,
+				3175A2E92C42C3D7004F947B /* UseCase.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3175A2EB2C42C499004F947B /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				3175A2EC2C42C5D4004F947B /* SaveItemKeyChainUseCase.swift */,
+				3175A2EE2C42C7EA004F947B /* GetItemKeyChainUseCase.swift */,
+				3175A3102C43229B004F947B /* LocalAuthenticationUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		3175A2F82C42DD35004F947B /* Injectors */ = {
+			isa = PBXGroup;
+			children = (
+				3175A2F92C42DE92004F947B /* KeyFormViewInjector.swift */,
+				3175A3192C432A5A004F947B /* HomeViewInjector.swift */,
+				317EE48A2C44B481004BC87B /* ListAppsViewInjector.swift */,
+			);
+			path = Injectors;
+			sourceTree = "<group>";
+		};
+		31774B022C40B3C3003C8670 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				31774B002C40B3A2003C8670 /* KeyFormController.swift */,
+				3175A3172C4329A4004F947B /* HomeController.swift */,
+				317EE4882C44B3FD004BC87B /* ListAppsController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		31774B032C40B3E5003C8670 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				31774B042C40B415003C8670 /* KeyFormView.swift */,
+				3175A3152C432995004F947B /* HomeView.swift */,
+				317EE4862C44B3E5004BC87B /* ListAppsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		317EE4792C4471E5004BC87B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				317EE47A2C447208004BC87B /* AppStoreHTTPClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		317EE47C2C44729C004BC87B /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				317EE47D2C4472BC004BC87B /* AppStoreEndpoints.swift */,
+				317EE47F2C44745E004BC87B /* HTTPMethods.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		3192E9FA2C3F50C000937003 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +209,21 @@
 		3192EA052C3F50C000937003 /* JaoStoreReleases */ = {
 			isa = PBXGroup;
 			children = (
-				3192EA062C3F50C000937003 /* JaoStoreReleasesApp.swift */,
-				3192EA082C3F50C000937003 /* ContentView.swift */,
-				3192EA0A2C3F50C000937003 /* Item.swift */,
-				3192EA0C2C3F50C100937003 /* Assets.xcassets */,
+				31774B022C40B3C3003C8670 /* Controllers */,
+				3175A2E42C42C1C0004F947B /* Entities */,
+				317EE47C2C44729C004BC87B /* Enums */,
+				3192EA1A2C3F681900937003 /* Extensions */,
+				3175A2F82C42DD35004F947B /* Injectors */,
+				3175A2E82C42C399004F947B /* Protocols */,
+				317EE4792C4471E5004BC87B /* Network */,
+				3175A2E32C42C169004F947B /* Resources */,
+				31EBC1052C41E24400684455 /* Services */,
+				3175A2EB2C42C499004F947B /* UseCases */,
+				31774B032C40B3E5003C8670 /* Views */,
+				3192EA192C3F66F700937003 /* Info.plist */,
 				3192EA112C3F50C100937003 /* JaoStoreReleases.entitlements */,
-				3192EA0E2C3F50C100937003 /* Preview Content */,
+				3192EA062C3F50C000937003 /* JaoStoreReleasesApp.swift */,
+				317EE48C2C44B76E004BC87B /* .gitignore */,
 			);
 			path = JaoStoreReleases;
 			sourceTree = "<group>";
@@ -72,6 +236,24 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		3192EA1A2C3F681900937003 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3192EA1B2C3F682F00937003 /* UTTypeExtension.swift */,
+				31EBC1082C41E5F500684455 /* DataExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		31EBC1052C41E24400684455 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				31EBC1062C41E2B700684455 /* KeyChainServiceImpl.swift */,
+				3175A30E2C431F2E004F947B /* LocalAuthServiceImpl.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,12 +264,17 @@
 				3192E9FF2C3F50C000937003 /* Sources */,
 				3192EA002C3F50C000937003 /* Frameworks */,
 				3192EA012C3F50C000937003 /* Resources */,
+				3175A2FF2C42E3F2004F947B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = JaoStoreReleases;
+			packageProductDependencies = (
+				3175A30A2C42EBFD004F947B /* Swinject */,
+				317EE4822C4482EC004BC87B /* SwiftJWT */,
+			);
 			productName = JaoStoreReleases;
 			productReference = 3192EA032C3F50C000937003 /* JaoStoreReleases.app */;
 			productType = "com.apple.product-type.application";
@@ -116,6 +303,10 @@
 				Base,
 			);
 			mainGroup = 3192E9FA2C3F50C000937003;
+			packageReferences = (
+				3175A3092C42EBFD004F947B /* XCRemoteSwiftPackageReference "Swinject" */,
+				317EE4812C4482EC004BC87B /* XCRemoteSwiftPackageReference "Swift-JWT" */,
+			);
 			productRefGroup = 3192EA042C3F50C000937003 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3192EA102C3F50C100937003 /* Preview Assets.xcassets in Resources */,
+				317EE48D2C44B76E004BC87B /* .gitignore in Resources */,
 				3192EA0D2C3F50C100937003 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,9 +334,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3192EA092C3F50C000937003 /* ContentView.swift in Sources */,
-				3192EA0B2C3F50C000937003 /* Item.swift in Sources */,
+				3192EA1C2C3F682F00937003 /* UTTypeExtension.swift in Sources */,
+				3175A2F12C42C8D9004F947B /* SetItemKeyChainParams.swift in Sources */,
+				317EE4802C44745E004BC87B /* HTTPMethods.swift in Sources */,
+				3175A2FA2C42DE92004F947B /* KeyFormViewInjector.swift in Sources */,
+				3192EA182C3F5E9900937003 /* PrivateKeyInfoData.swift in Sources */,
+				31774B052C40B415003C8670 /* KeyFormView.swift in Sources */,
+				317EE4872C44B3E5004BC87B /* ListAppsView.swift in Sources */,
+				3175A2FC2C42DEB2004F947B /* Injector.swift in Sources */,
+				31EBC1072C41E2B700684455 /* KeyChainServiceImpl.swift in Sources */,
+				3175A30D2C431E8E004F947B /* LocalAuthService.swift in Sources */,
+				3175A2EF2C42C7EA004F947B /* GetItemKeyChainUseCase.swift in Sources */,
+				3175A3162C432995004F947B /* HomeView.swift in Sources */,
+				317EE47E2C4472BC004BC87B /* AppStoreEndpoints.swift in Sources */,
+				3175A3112C43229B004F947B /* LocalAuthenticationUseCase.swift in Sources */,
+				31EBC1092C41E5F500684455 /* DataExtension.swift in Sources */,
+				3175A31A2C432A5A004F947B /* HomeViewInjector.swift in Sources */,
+				3175A2E72C42C311004F947B /* KeyChainService.swift in Sources */,
+				317EE4892C44B3FD004BC87B /* ListAppsController.swift in Sources */,
+				3175A2EA2C42C3D7004F947B /* UseCase.swift in Sources */,
+				3175A30F2C431F2E004F947B /* LocalAuthServiceImpl.swift in Sources */,
 				3192EA072C3F50C000937003 /* JaoStoreReleasesApp.swift in Sources */,
+				317EE47B2C447208004BC87B /* AppStoreHTTPClient.swift in Sources */,
+				31774B012C40B3A2003C8670 /* KeyFormController.swift in Sources */,
+				3175A3182C4329A4004F947B /* HomeController.swift in Sources */,
+				317EE48B2C44B481004BC87B /* ListAppsViewInjector.swift in Sources */,
+				317EE4852C448481004BC87B /* AppStoreJWTClaims.swift in Sources */,
+				3175A2ED2C42C5D4004F947B /* SaveItemKeyChainUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,11 +494,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"JaoStoreReleases/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"JaoStoreReleases/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = WJAZ3XSD4V;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JaoStoreReleases/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,11 +523,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"JaoStoreReleases/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"JaoStoreReleases/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = WJAZ3XSD4V;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JaoStoreReleases/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -347,6 +565,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3175A3092C42EBFD004F947B /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.7.0;
+			};
+		};
+		317EE4812C4482EC004BC87B /* XCRemoteSwiftPackageReference "Swift-JWT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kitura/Swift-JWT.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3175A30A2C42EBFD004F947B /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3175A3092C42EBFD004F947B /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		317EE4822C4482EC004BC87B /* SwiftJWT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 317EE4812C4482EC004BC87B /* XCRemoteSwiftPackageReference "Swift-JWT" */;
+			productName = SwiftJWT;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3192E9FB2C3F50C000937003 /* Project object */;
 }

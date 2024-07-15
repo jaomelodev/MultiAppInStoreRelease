@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSFaceIDUsageDescription</key>
+	<string>We need this to ensurare your private key security</string>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.item</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>com.apple.pkcs8-pem</string>
+			<key>UTTypeDescription</key>
+			<string>PEM-encoded PKCS#8</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.mime-type</key>
+				<array>
+					<string>application/x-pem-file</string>
+				</array>
+				<key>public.filename-extension</key>
+				<array>
+					<string>p8</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
