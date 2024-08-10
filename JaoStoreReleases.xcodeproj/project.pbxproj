@@ -7,22 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3175A2E72C42C311004F947B /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A2E62C42C311004F947B /* KeyChainService.swift */; };
+		31425E282C474722006087B6 /* AppStoreServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31425E272C474722006087B6 /* AppStoreServiceImpl.swift */; };
+		31425E2B2C474C6C006087B6 /* ListAllAppsAppleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31425E2A2C474C6C006087B6 /* ListAllAppsAppleError.swift */; };
+		31425E2D2C474E6A006087B6 /* HTTPClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31425E2C2C474E6A006087B6 /* HTTPClientError.swift */; };
+		31425E352C4758EA006087B6 /* GetItemKeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31425E342C4758EA006087B6 /* GetItemKeyChainService.swift */; };
+		3144DBBC2C62D65F00CF4674 /* AppDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144DBBB2C62D65F00CF4674 /* AppDetailsController.swift */; };
+		3144DBBE2C62D67800CF4674 /* AppDetailsViewInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144DBBD2C62D67800CF4674 /* AppDetailsViewInjector.swift */; };
+		3144DBC02C62FB9100CF4674 /* CreateReleaseForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144DBBF2C62FB9100CF4674 /* CreateReleaseForm.swift */; };
+		3169F4F42C67E11B00D3AF99 /* GetAppVersionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169F4F32C67E11B00D3AF99 /* GetAppVersionError.swift */; };
+		3169F4F62C67E14300D3AF99 /* GetAppVersionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169F4F52C67E14300D3AF99 /* GetAppVersionUseCase.swift */; };
+		3169F4F82C67E15600D3AF99 /* GetAppVersionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169F4F72C67E15600D3AF99 /* GetAppVersionService.swift */; };
+		3169F4FA2C67E16800D3AF99 /* GetAppVersionUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169F4F92C67E16800D3AF99 /* GetAppVersionUseCaseMock.swift */; };
+		3169F4FD2C67FD6E00D3AF99 /* GetAppVersionFromAppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169F4FC2C67FD6E00D3AF99 /* GetAppVersionFromAppError.swift */; };
+		3169F4FF2C67FD7A00D3AF99 /* GetAppVersionFromAppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169F4FE2C67FD7A00D3AF99 /* GetAppVersionFromAppService.swift */; };
+		3169F5012C67FD8B00D3AF99 /* GetAppVersionFromAppUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169F5002C67FD8B00D3AF99 /* GetAppVersionFromAppUseCase.swift */; };
+		3169F5032C67FD9D00D3AF99 /* GetAppVersionFromAppUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3169F5022C67FD9D00D3AF99 /* GetAppVersionFromAppUseCaseMock.swift */; };
+		316F89C82C48675A003BD43A /* ListAllAppsAppleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F89C72C48675A003BD43A /* ListAllAppsAppleUseCase.swift */; };
+		316F89CA2C48676C003BD43A /* ListAllAppsAppleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F89C92C48676C003BD43A /* ListAllAppsAppleService.swift */; };
+		316F89CC2C486A0A003BD43A /* LocalAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F89CB2C486A0A003BD43A /* LocalAuthError.swift */; };
+		316F89CE2C487690003BD43A /* GetItemKeyChainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F89CD2C487690003BD43A /* GetItemKeyChainError.swift */; };
+		316F89D02C4877B7003BD43A /* SaveItemKeyChainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316F89CF2C4877B7003BD43A /* SaveItemKeyChainError.swift */; };
+		3171D08B2C59C02900591AE2 /* CreateAppVersionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3171D08A2C59C02900591AE2 /* CreateAppVersionError.swift */; };
+		3171D08D2C59C06100591AE2 /* CreateAppVersionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3171D08C2C59C06100591AE2 /* CreateAppVersionUseCase.swift */; };
+		3171D08F2C59C07600591AE2 /* CreateAppVersionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3171D08E2C59C07600591AE2 /* CreateAppVersionService.swift */; };
+		3173E9502C5E77CF00F71EFD /* ListAllAppBuildsUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3173E94F2C5E77CF00F71EFD /* ListAllAppBuildsUseCaseMock.swift */; };
+		3173E9522C5E788D00F71EFD /* ListAllAppsAppleUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3173E9512C5E788D00F71EFD /* ListAllAppsAppleUseCaseMock.swift */; };
+		317425F02C642F10004B3A66 /* CreateNewReleaseUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317425EF2C642F10004B3A66 /* CreateNewReleaseUseCaseMock.swift */; };
+		317425F32C658043004B3A66 /* DeleteAppVersionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317425F22C658043004B3A66 /* DeleteAppVersionError.swift */; };
+		317425F52C658055004B3A66 /* DeleteAppVersionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317425F42C658055004B3A66 /* DeleteAppVersionService.swift */; };
+		317425F72C65805D004B3A66 /* DeleteAppVersionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317425F62C65805D004B3A66 /* DeleteAppVersionUseCase.swift */; };
+		317425F92C658068004B3A66 /* DeleteAppVersionUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317425F82C658068004B3A66 /* DeleteAppVersionUseCaseMock.swift */; };
+		317425FC2C659989004B3A66 /* UpdateAppVersionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317425FB2C659989004B3A66 /* UpdateAppVersionError.swift */; };
+		317425FE2C659992004B3A66 /* UpdateAppVersionParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317425FD2C659992004B3A66 /* UpdateAppVersionParams.swift */; };
+		317426002C65999D004B3A66 /* UpdateAppVersionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317425FF2C65999D004B3A66 /* UpdateAppVersionService.swift */; };
+		317426022C6599AA004B3A66 /* UpdateAppVersionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317426012C6599AA004B3A66 /* UpdateAppVersionUseCase.swift */; };
+		3175A2E72C42C311004F947B /* SaveItemKeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A2E62C42C311004F947B /* SaveItemKeyChainService.swift */; };
 		3175A2EA2C42C3D7004F947B /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A2E92C42C3D7004F947B /* UseCase.swift */; };
 		3175A2ED2C42C5D4004F947B /* SaveItemKeyChainUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A2EC2C42C5D4004F947B /* SaveItemKeyChainUseCase.swift */; };
 		3175A2EF2C42C7EA004F947B /* GetItemKeyChainUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A2EE2C42C7EA004F947B /* GetItemKeyChainUseCase.swift */; };
-		3175A2F12C42C8D9004F947B /* SetItemKeyChainParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A2F02C42C8D9004F947B /* SetItemKeyChainParams.swift */; };
+		3175A2F12C42C8D9004F947B /* SaveItemKeyChainParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A2F02C42C8D9004F947B /* SaveItemKeyChainParams.swift */; };
 		3175A2FA2C42DE92004F947B /* KeyFormViewInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A2F92C42DE92004F947B /* KeyFormViewInjector.swift */; };
 		3175A2FC2C42DEB2004F947B /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A2FB2C42DEB2004F947B /* Injector.swift */; };
 		3175A30B2C42EBFD004F947B /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3175A30A2C42EBFD004F947B /* Swinject */; };
 		3175A30D2C431E8E004F947B /* LocalAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A30C2C431E8E004F947B /* LocalAuthService.swift */; };
-		3175A30F2C431F2E004F947B /* LocalAuthServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A30E2C431F2E004F947B /* LocalAuthServiceImpl.swift */; };
-		3175A3112C43229B004F947B /* LocalAuthenticationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A3102C43229B004F947B /* LocalAuthenticationUseCase.swift */; };
+		3175A30F2C431F2E004F947B /* AuthServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A30E2C431F2E004F947B /* AuthServiceImpl.swift */; };
+		3175A3112C43229B004F947B /* LocalAuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A3102C43229B004F947B /* LocalAuthUseCase.swift */; };
 		3175A3162C432995004F947B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A3152C432995004F947B /* HomeView.swift */; };
 		3175A3182C4329A4004F947B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A3172C4329A4004F947B /* HomeController.swift */; };
 		3175A31A2C432A5A004F947B /* HomeViewInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3175A3192C432A5A004F947B /* HomeViewInjector.swift */; };
 		31774B012C40B3A2003C8670 /* KeyFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31774B002C40B3A2003C8670 /* KeyFormController.swift */; };
 		31774B052C40B415003C8670 /* KeyFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31774B042C40B415003C8670 /* KeyFormView.swift */; };
+		3178D65B2C586A370047A57E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3178D65A2C586A370047A57E /* Task.swift */; };
 		317EE47B2C447208004BC87B /* AppStoreHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EE47A2C447208004BC87B /* AppStoreHTTPClient.swift */; };
 		317EE47E2C4472BC004BC87B /* AppStoreEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EE47D2C4472BC004BC87B /* AppStoreEndpoints.swift */; };
 		317EE4802C44745E004BC87B /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EE47F2C44745E004BC87B /* HTTPMethods.swift */; };
@@ -32,14 +67,68 @@
 		317EE4892C44B3FD004BC87B /* ListAppsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EE4882C44B3FD004BC87B /* ListAppsController.swift */; };
 		317EE48B2C44B481004BC87B /* ListAppsViewInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EE48A2C44B481004BC87B /* ListAppsViewInjector.swift */; };
 		317EE48D2C44B76E004BC87B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 317EE48C2C44B76E004BC87B /* .gitignore */; };
+		31827E162C4F395D00BB8746 /* ListAllAppBuildsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31827E152C4F395D00BB8746 /* ListAllAppBuildsUseCase.swift */; };
+		31827E182C4F399000BB8746 /* ListAllAppBuildsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31827E172C4F399000BB8746 /* ListAllAppBuildsService.swift */; };
+		31827E1A2C4F399E00BB8746 /* ListAllAppBuildsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31827E192C4F399E00BB8746 /* ListAllAppBuildsError.swift */; };
+		31827E1C2C4F3AFF00BB8746 /* AppBuildModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31827E1B2C4F3AFF00BB8746 /* AppBuildModel.swift */; };
+		3183716C2C5C63B800278456 /* UpdateLocalizationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3183716B2C5C63B800278456 /* UpdateLocalizationError.swift */; };
+		3183716E2C5C63CE00278456 /* UpdateLocalizationParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3183716D2C5C63CE00278456 /* UpdateLocalizationParams.swift */; };
+		318371702C5C63E800278456 /* UpdateLocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3183716F2C5C63E800278456 /* UpdateLocalizationService.swift */; };
+		318371722C5C63FF00278456 /* UpdateLocalizationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318371712C5C63FF00278456 /* UpdateLocalizationUseCase.swift */; };
+		318371752C5C674900278456 /* GetLocalizationFromReleaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318371742C5C674900278456 /* GetLocalizationFromReleaseError.swift */; };
+		318371772C5C676700278456 /* GetLocalizationFromReleaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318371762C5C676700278456 /* GetLocalizationFromReleaseService.swift */; };
+		318371792C5C677200278456 /* GetLocalizationFromReleaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318371782C5C677100278456 /* GetLocalizationFromReleaseUseCase.swift */; };
+		318447372C45FE6800EF4750 /* ListAppItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318447362C45FE6800EF4750 /* ListAppItemModel.swift */; };
+		318447392C46069300EF4750 /* ListAppItemEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318447382C46069300EF4750 /* ListAppItemEntity.swift */; };
+		3184473B2C4608C500EF4750 /* ListAppItemAppleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3184473A2C4608C500EF4750 /* ListAppItemAppleModel.swift */; };
+		318B7F6A2C5D8E06004901F7 /* AcceptComplianceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B7F692C5D8E06004901F7 /* AcceptComplianceError.swift */; };
+		318B7F6C2C5D8E66004901F7 /* AcceptComplianceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B7F6B2C5D8E66004901F7 /* AcceptComplianceService.swift */; };
+		318B7F6E2C5D8E70004901F7 /* AcceptComplianceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B7F6D2C5D8E70004901F7 /* AcceptComplianceUseCase.swift */; };
+		318B7F702C5D8F27004901F7 /* SubmitToReviewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B7F6F2C5D8F27004901F7 /* SubmitToReviewError.swift */; };
+		318B7F722C5D8F36004901F7 /* SubmitToReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B7F712C5D8F36004901F7 /* SubmitToReviewService.swift */; };
+		318B7F742C5D8F4C004901F7 /* SubmitToReviewUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B7F732C5D8F4C004901F7 /* SubmitToReviewUseCase.swift */; };
+		318B7F762C5D9197004901F7 /* AcceptComplianceParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B7F752C5D9197004901F7 /* AcceptComplianceParams.swift */; };
+		318B7F792C5D95BA004901F7 /* CreateNewReleaseParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B7F782C5D95BA004901F7 /* CreateNewReleaseParams.swift */; };
+		318B7F7B2C5D95C4004901F7 /* CreateNewReleaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B7F7A2C5D95C4004901F7 /* CreateNewReleaseError.swift */; };
+		318B7F7D2C5D95EF004901F7 /* CreateNewReleaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B7F7C2C5D95EF004901F7 /* CreateNewReleaseUseCase.swift */; };
+		318B7F852C5DC785004901F7 /* JaoStoreReleasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318B7F842C5DC785004901F7 /* JaoStoreReleasesTests.swift */; };
+		318BE5EE2C50830E00A10CAC /* AppBuildEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BE5ED2C50830E00A10CAC /* AppBuildEntity.swift */; };
+		318C63632C4C72CE00130B56 /* ListAppItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318C63622C4C72CE00130B56 /* ListAppItem.swift */; };
+		318C63662C4C774300130B56 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318C63652C4C774300130B56 /* Flags.swift */; };
+		318C63682C4D821900130B56 /* AppDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318C63672C4D821900130B56 /* AppDetailsView.swift */; };
+		318C636E2C4D9A4100130B56 /* AppStoreVersionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318C636D2C4D9A4100130B56 /* AppStoreVersionModel.swift */; };
+		318C63702C4D9B7B00130B56 /* AppStoreVersionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318C636F2C4D9B7B00130B56 /* AppStoreVersionEntity.swift */; };
+		318C63722C4DB12800130B56 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318C63712C4DB12800130B56 /* LazyView.swift */; };
 		3192EA072C3F50C000937003 /* JaoStoreReleasesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3192EA062C3F50C000937003 /* JaoStoreReleasesApp.swift */; };
 		3192EA0D2C3F50C100937003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3192EA0C2C3F50C100937003 /* Assets.xcassets */; };
 		3192EA102C3F50C100937003 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3192EA0F2C3F50C100937003 /* Preview Assets.xcassets */; };
 		3192EA182C3F5E9900937003 /* PrivateKeyInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3192EA172C3F5E9900937003 /* PrivateKeyInfoData.swift */; };
 		3192EA1C2C3F682F00937003 /* UTTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3192EA1B2C3F682F00937003 /* UTTypeExtension.swift */; };
+		31A058DF2C66C46D00D1B1E1 /* GetAppVersionBuildError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A058DE2C66C46D00D1B1E1 /* GetAppVersionBuildError.swift */; };
+		31A058E12C66C48A00D1B1E1 /* GetAppVersionBuildService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A058E02C66C48A00D1B1E1 /* GetAppVersionBuildService.swift */; };
+		31A058E32C66C49D00D1B1E1 /* GetAppVersionBuildUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A058E22C66C49D00D1B1E1 /* GetAppVersionBuildUseCase.swift */; };
+		31A058E52C66C4AF00D1B1E1 /* GetAppVersionBuildUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A058E42C66C4AF00D1B1E1 /* GetAppVersionBuildUseCaseMock.swift */; };
+		31A058E82C66CAD200D1B1E1 /* ListAvailableAppBuildsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A058E72C66CAD200D1B1E1 /* ListAvailableAppBuildsError.swift */; };
+		31A058EA2C66CAEC00D1B1E1 /* ListAvailableAppBuildsParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A058E92C66CAEC00D1B1E1 /* ListAvailableAppBuildsParams.swift */; };
+		31A058EE2C66CB0B00D1B1E1 /* ListAvailableAppBuildsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A058ED2C66CB0B00D1B1E1 /* ListAvailableAppBuildsUseCase.swift */; };
+		31A058F02C66CB2000D1B1E1 /* ListAvailableAppBuildsUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A058EF2C66CB2000D1B1E1 /* ListAvailableAppBuildsUseCaseMock.swift */; };
+		31A61FEF2C5B11D60043B149 /* CreateAppVersionParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A61FEE2C5B11D60043B149 /* CreateAppVersionParams.swift */; };
+		31A61FF22C5B188B0043B149 /* AddBuildToReleaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A61FF12C5B188B0043B149 /* AddBuildToReleaseError.swift */; };
+		31A61FF42C5B18EF0043B149 /* AddBuildToReleaseParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A61FF32C5B18EF0043B149 /* AddBuildToReleaseParams.swift */; };
+		31A61FF62C5B190B0043B149 /* AddBuildToReleaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A61FF52C5B190B0043B149 /* AddBuildToReleaseService.swift */; };
+		31A61FF82C5B191C0043B149 /* AddBuildToReleaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A61FF72C5B191C0043B149 /* AddBuildToReleaseUseCase.swift */; };
 		31EBC1072C41E2B700684455 /* KeyChainServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EBC1062C41E2B700684455 /* KeyChainServiceImpl.swift */; };
-		31EBC1092C41E5F500684455 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EBC1082C41E5F500684455 /* DataExtension.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		318B7F862C5DC785004901F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3192E9FB2C3F50C000937003 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3192EA022C3F50C000937003;
+			remoteInfo = JaoStoreReleases;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		3175A2FF2C42E3F2004F947B /* Embed Frameworks */ = {
@@ -55,21 +144,56 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3175A2E62C42C311004F947B /* KeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
+		31425E272C474722006087B6 /* AppStoreServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreServiceImpl.swift; sourceTree = "<group>"; };
+		31425E2A2C474C6C006087B6 /* ListAllAppsAppleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllAppsAppleError.swift; sourceTree = "<group>"; };
+		31425E2C2C474E6A006087B6 /* HTTPClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientError.swift; sourceTree = "<group>"; };
+		31425E342C4758EA006087B6 /* GetItemKeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetItemKeyChainService.swift; sourceTree = "<group>"; };
+		3144DBBB2C62D65F00CF4674 /* AppDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsController.swift; sourceTree = "<group>"; };
+		3144DBBD2C62D67800CF4674 /* AppDetailsViewInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsViewInjector.swift; sourceTree = "<group>"; };
+		3144DBBF2C62FB9100CF4674 /* CreateReleaseForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReleaseForm.swift; sourceTree = "<group>"; };
+		3169F4F32C67E11B00D3AF99 /* GetAppVersionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppVersionError.swift; sourceTree = "<group>"; };
+		3169F4F52C67E14300D3AF99 /* GetAppVersionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppVersionUseCase.swift; sourceTree = "<group>"; };
+		3169F4F72C67E15600D3AF99 /* GetAppVersionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppVersionService.swift; sourceTree = "<group>"; };
+		3169F4F92C67E16800D3AF99 /* GetAppVersionUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppVersionUseCaseMock.swift; sourceTree = "<group>"; };
+		3169F4FC2C67FD6E00D3AF99 /* GetAppVersionFromAppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppVersionFromAppError.swift; sourceTree = "<group>"; };
+		3169F4FE2C67FD7A00D3AF99 /* GetAppVersionFromAppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppVersionFromAppService.swift; sourceTree = "<group>"; };
+		3169F5002C67FD8B00D3AF99 /* GetAppVersionFromAppUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppVersionFromAppUseCase.swift; sourceTree = "<group>"; };
+		3169F5022C67FD9D00D3AF99 /* GetAppVersionFromAppUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppVersionFromAppUseCaseMock.swift; sourceTree = "<group>"; };
+		316F89C72C48675A003BD43A /* ListAllAppsAppleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllAppsAppleUseCase.swift; sourceTree = "<group>"; };
+		316F89C92C48676C003BD43A /* ListAllAppsAppleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllAppsAppleService.swift; sourceTree = "<group>"; };
+		316F89CB2C486A0A003BD43A /* LocalAuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthError.swift; sourceTree = "<group>"; };
+		316F89CD2C487690003BD43A /* GetItemKeyChainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetItemKeyChainError.swift; sourceTree = "<group>"; };
+		316F89CF2C4877B7003BD43A /* SaveItemKeyChainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveItemKeyChainError.swift; sourceTree = "<group>"; };
+		3171D08A2C59C02900591AE2 /* CreateAppVersionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAppVersionError.swift; sourceTree = "<group>"; };
+		3171D08C2C59C06100591AE2 /* CreateAppVersionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAppVersionUseCase.swift; sourceTree = "<group>"; };
+		3171D08E2C59C07600591AE2 /* CreateAppVersionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAppVersionService.swift; sourceTree = "<group>"; };
+		3173E94F2C5E77CF00F71EFD /* ListAllAppBuildsUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllAppBuildsUseCaseMock.swift; sourceTree = "<group>"; };
+		3173E9512C5E788D00F71EFD /* ListAllAppsAppleUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllAppsAppleUseCaseMock.swift; sourceTree = "<group>"; };
+		317425EF2C642F10004B3A66 /* CreateNewReleaseUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewReleaseUseCaseMock.swift; sourceTree = "<group>"; };
+		317425F22C658043004B3A66 /* DeleteAppVersionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAppVersionError.swift; sourceTree = "<group>"; };
+		317425F42C658055004B3A66 /* DeleteAppVersionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAppVersionService.swift; sourceTree = "<group>"; };
+		317425F62C65805D004B3A66 /* DeleteAppVersionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAppVersionUseCase.swift; sourceTree = "<group>"; };
+		317425F82C658068004B3A66 /* DeleteAppVersionUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAppVersionUseCaseMock.swift; sourceTree = "<group>"; };
+		317425FB2C659989004B3A66 /* UpdateAppVersionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAppVersionError.swift; sourceTree = "<group>"; };
+		317425FD2C659992004B3A66 /* UpdateAppVersionParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAppVersionParams.swift; sourceTree = "<group>"; };
+		317425FF2C65999D004B3A66 /* UpdateAppVersionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAppVersionService.swift; sourceTree = "<group>"; };
+		317426012C6599AA004B3A66 /* UpdateAppVersionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAppVersionUseCase.swift; sourceTree = "<group>"; };
+		3175A2E62C42C311004F947B /* SaveItemKeyChainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveItemKeyChainService.swift; sourceTree = "<group>"; };
 		3175A2E92C42C3D7004F947B /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		3175A2EC2C42C5D4004F947B /* SaveItemKeyChainUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveItemKeyChainUseCase.swift; sourceTree = "<group>"; };
 		3175A2EE2C42C7EA004F947B /* GetItemKeyChainUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetItemKeyChainUseCase.swift; sourceTree = "<group>"; };
-		3175A2F02C42C8D9004F947B /* SetItemKeyChainParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetItemKeyChainParams.swift; sourceTree = "<group>"; };
+		3175A2F02C42C8D9004F947B /* SaveItemKeyChainParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveItemKeyChainParams.swift; sourceTree = "<group>"; };
 		3175A2F92C42DE92004F947B /* KeyFormViewInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFormViewInjector.swift; sourceTree = "<group>"; };
 		3175A2FB2C42DEB2004F947B /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 		3175A30C2C431E8E004F947B /* LocalAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthService.swift; sourceTree = "<group>"; };
-		3175A30E2C431F2E004F947B /* LocalAuthServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthServiceImpl.swift; sourceTree = "<group>"; };
-		3175A3102C43229B004F947B /* LocalAuthenticationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationUseCase.swift; sourceTree = "<group>"; };
+		3175A30E2C431F2E004F947B /* AuthServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceImpl.swift; sourceTree = "<group>"; };
+		3175A3102C43229B004F947B /* LocalAuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthUseCase.swift; sourceTree = "<group>"; };
 		3175A3152C432995004F947B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3175A3172C4329A4004F947B /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		3175A3192C432A5A004F947B /* HomeViewInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewInjector.swift; sourceTree = "<group>"; };
 		31774B002C40B3A2003C8670 /* KeyFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFormController.swift; sourceTree = "<group>"; };
 		31774B042C40B415003C8670 /* KeyFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyFormView.swift; sourceTree = "<group>"; };
+		3178D65A2C586A370047A57E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		317EE47A2C447208004BC87B /* AppStoreHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreHTTPClient.swift; sourceTree = "<group>"; };
 		317EE47D2C4472BC004BC87B /* AppStoreEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreEndpoints.swift; sourceTree = "<group>"; };
 		317EE47F2C44745E004BC87B /* HTTPMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
@@ -78,6 +202,39 @@
 		317EE4882C44B3FD004BC87B /* ListAppsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAppsController.swift; sourceTree = "<group>"; };
 		317EE48A2C44B481004BC87B /* ListAppsViewInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAppsViewInjector.swift; sourceTree = "<group>"; };
 		317EE48C2C44B76E004BC87B /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		31827E152C4F395D00BB8746 /* ListAllAppBuildsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllAppBuildsUseCase.swift; sourceTree = "<group>"; };
+		31827E172C4F399000BB8746 /* ListAllAppBuildsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllAppBuildsService.swift; sourceTree = "<group>"; };
+		31827E192C4F399E00BB8746 /* ListAllAppBuildsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAllAppBuildsError.swift; sourceTree = "<group>"; };
+		31827E1B2C4F3AFF00BB8746 /* AppBuildModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBuildModel.swift; sourceTree = "<group>"; };
+		3183716B2C5C63B800278456 /* UpdateLocalizationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocalizationError.swift; sourceTree = "<group>"; };
+		3183716D2C5C63CE00278456 /* UpdateLocalizationParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocalizationParams.swift; sourceTree = "<group>"; };
+		3183716F2C5C63E800278456 /* UpdateLocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocalizationService.swift; sourceTree = "<group>"; };
+		318371712C5C63FF00278456 /* UpdateLocalizationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocalizationUseCase.swift; sourceTree = "<group>"; };
+		318371742C5C674900278456 /* GetLocalizationFromReleaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocalizationFromReleaseError.swift; sourceTree = "<group>"; };
+		318371762C5C676700278456 /* GetLocalizationFromReleaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocalizationFromReleaseService.swift; sourceTree = "<group>"; };
+		318371782C5C677100278456 /* GetLocalizationFromReleaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocalizationFromReleaseUseCase.swift; sourceTree = "<group>"; };
+		318447362C45FE6800EF4750 /* ListAppItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAppItemModel.swift; sourceTree = "<group>"; };
+		318447382C46069300EF4750 /* ListAppItemEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAppItemEntity.swift; sourceTree = "<group>"; };
+		3184473A2C4608C500EF4750 /* ListAppItemAppleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAppItemAppleModel.swift; sourceTree = "<group>"; };
+		318B7F692C5D8E06004901F7 /* AcceptComplianceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptComplianceError.swift; sourceTree = "<group>"; };
+		318B7F6B2C5D8E66004901F7 /* AcceptComplianceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptComplianceService.swift; sourceTree = "<group>"; };
+		318B7F6D2C5D8E70004901F7 /* AcceptComplianceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptComplianceUseCase.swift; sourceTree = "<group>"; };
+		318B7F6F2C5D8F27004901F7 /* SubmitToReviewError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitToReviewError.swift; sourceTree = "<group>"; };
+		318B7F712C5D8F36004901F7 /* SubmitToReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitToReviewService.swift; sourceTree = "<group>"; };
+		318B7F732C5D8F4C004901F7 /* SubmitToReviewUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitToReviewUseCase.swift; sourceTree = "<group>"; };
+		318B7F752C5D9197004901F7 /* AcceptComplianceParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptComplianceParams.swift; sourceTree = "<group>"; };
+		318B7F782C5D95BA004901F7 /* CreateNewReleaseParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewReleaseParams.swift; sourceTree = "<group>"; };
+		318B7F7A2C5D95C4004901F7 /* CreateNewReleaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewReleaseError.swift; sourceTree = "<group>"; };
+		318B7F7C2C5D95EF004901F7 /* CreateNewReleaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewReleaseUseCase.swift; sourceTree = "<group>"; };
+		318B7F822C5DC785004901F7 /* JaoStoreReleasesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JaoStoreReleasesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		318B7F842C5DC785004901F7 /* JaoStoreReleasesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JaoStoreReleasesTests.swift; sourceTree = "<group>"; };
+		318BE5ED2C50830E00A10CAC /* AppBuildEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBuildEntity.swift; sourceTree = "<group>"; };
+		318C63622C4C72CE00130B56 /* ListAppItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAppItem.swift; sourceTree = "<group>"; };
+		318C63652C4C774300130B56 /* Flags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
+		318C63672C4D821900130B56 /* AppDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsView.swift; sourceTree = "<group>"; };
+		318C636D2C4D9A4100130B56 /* AppStoreVersionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreVersionModel.swift; sourceTree = "<group>"; };
+		318C636F2C4D9B7B00130B56 /* AppStoreVersionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreVersionEntity.swift; sourceTree = "<group>"; };
+		318C63712C4DB12800130B56 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		3192EA032C3F50C000937003 /* JaoStoreReleases.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JaoStoreReleases.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3192EA062C3F50C000937003 /* JaoStoreReleasesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JaoStoreReleasesApp.swift; sourceTree = "<group>"; };
 		3192EA0C2C3F50C100937003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,11 +243,30 @@
 		3192EA172C3F5E9900937003 /* PrivateKeyInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeyInfoData.swift; sourceTree = "<group>"; };
 		3192EA192C3F66F700937003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3192EA1B2C3F682F00937003 /* UTTypeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTTypeExtension.swift; sourceTree = "<group>"; };
+		31A058DE2C66C46D00D1B1E1 /* GetAppVersionBuildError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppVersionBuildError.swift; sourceTree = "<group>"; };
+		31A058E02C66C48A00D1B1E1 /* GetAppVersionBuildService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppVersionBuildService.swift; sourceTree = "<group>"; };
+		31A058E22C66C49D00D1B1E1 /* GetAppVersionBuildUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppVersionBuildUseCase.swift; sourceTree = "<group>"; };
+		31A058E42C66C4AF00D1B1E1 /* GetAppVersionBuildUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppVersionBuildUseCaseMock.swift; sourceTree = "<group>"; };
+		31A058E72C66CAD200D1B1E1 /* ListAvailableAppBuildsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAvailableAppBuildsError.swift; sourceTree = "<group>"; };
+		31A058E92C66CAEC00D1B1E1 /* ListAvailableAppBuildsParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAvailableAppBuildsParams.swift; sourceTree = "<group>"; };
+		31A058ED2C66CB0B00D1B1E1 /* ListAvailableAppBuildsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAvailableAppBuildsUseCase.swift; sourceTree = "<group>"; };
+		31A058EF2C66CB2000D1B1E1 /* ListAvailableAppBuildsUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAvailableAppBuildsUseCaseMock.swift; sourceTree = "<group>"; };
+		31A61FEE2C5B11D60043B149 /* CreateAppVersionParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAppVersionParams.swift; sourceTree = "<group>"; };
+		31A61FF12C5B188B0043B149 /* AddBuildToReleaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBuildToReleaseError.swift; sourceTree = "<group>"; };
+		31A61FF32C5B18EF0043B149 /* AddBuildToReleaseParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBuildToReleaseParams.swift; sourceTree = "<group>"; };
+		31A61FF52C5B190B0043B149 /* AddBuildToReleaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBuildToReleaseService.swift; sourceTree = "<group>"; };
+		31A61FF72C5B191C0043B149 /* AddBuildToReleaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBuildToReleaseUseCase.swift; sourceTree = "<group>"; };
 		31EBC1062C41E2B700684455 /* KeyChainServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainServiceImpl.swift; sourceTree = "<group>"; };
-		31EBC1082C41E5F500684455 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		318B7F7F2C5DC785004901F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3192EA002C3F50C000937003 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -103,6 +279,135 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31425E2E2C4750B6006087B6 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				318C63642C4C773700130B56 /* Config */,
+				3175A2E42C42C1C0004F947B /* Entities */,
+				3192EA1A2C3F681900937003 /* Extensions */,
+				318447352C45FE1300EF4750 /* Models */,
+				3175A2E82C42C399004F947B /* Interfaces */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		31425E2F2C475285006087B6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				318C635F2C4C729400130B56 /* Components */,
+				31774B022C40B3C3003C8670 /* Controllers */,
+				3175A2F82C42DD35004F947B /* Injectors */,
+				31774B032C40B3E5003C8670 /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		31425E302C475345006087B6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				317EE4792C4471E5004BC87B /* Network */,
+				31EBC1052C41E24400684455 /* Services */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		31425E312C47570B006087B6 /* SaveItemKeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				316F89CF2C4877B7003BD43A /* SaveItemKeyChainError.swift */,
+				3175A2F02C42C8D9004F947B /* SaveItemKeyChainParams.swift */,
+				3175A2E62C42C311004F947B /* SaveItemKeyChainService.swift */,
+				3175A2EC2C42C5D4004F947B /* SaveItemKeyChainUseCase.swift */,
+			);
+			path = SaveItemKeyChain;
+			sourceTree = "<group>";
+		};
+		31425E322C47571F006087B6 /* GetItemKeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				316F89CD2C487690003BD43A /* GetItemKeyChainError.swift */,
+				31425E342C4758EA006087B6 /* GetItemKeyChainService.swift */,
+				3175A2EE2C42C7EA004F947B /* GetItemKeyChainUseCase.swift */,
+			);
+			path = GetItemKeyChain;
+			sourceTree = "<group>";
+		};
+		31425E332C475731006087B6 /* LocalAuth */ = {
+			isa = PBXGroup;
+			children = (
+				316F89CB2C486A0A003BD43A /* LocalAuthError.swift */,
+				3175A30C2C431E8E004F947B /* LocalAuthService.swift */,
+				3175A3102C43229B004F947B /* LocalAuthUseCase.swift */,
+			);
+			path = LocalAuth;
+			sourceTree = "<group>";
+		};
+		3169F4F22C67E0CE00D3AF99 /* GetAppVersion */ = {
+			isa = PBXGroup;
+			children = (
+				3169F4F32C67E11B00D3AF99 /* GetAppVersionError.swift */,
+				3169F4F72C67E15600D3AF99 /* GetAppVersionService.swift */,
+				3169F4F52C67E14300D3AF99 /* GetAppVersionUseCase.swift */,
+				3169F4F92C67E16800D3AF99 /* GetAppVersionUseCaseMock.swift */,
+			);
+			path = GetAppVersion;
+			sourceTree = "<group>";
+		};
+		3169F4FB2C67FD4900D3AF99 /* GetAppVersionFromApp */ = {
+			isa = PBXGroup;
+			children = (
+				3169F4FC2C67FD6E00D3AF99 /* GetAppVersionFromAppError.swift */,
+				3169F4FE2C67FD7A00D3AF99 /* GetAppVersionFromAppService.swift */,
+				3169F5002C67FD8B00D3AF99 /* GetAppVersionFromAppUseCase.swift */,
+				3169F5022C67FD9D00D3AF99 /* GetAppVersionFromAppUseCaseMock.swift */,
+			);
+			path = GetAppVersionFromApp;
+			sourceTree = "<group>";
+		};
+		316F89C62C4866BA003BD43A /* ListAllApps */ = {
+			isa = PBXGroup;
+			children = (
+				31425E2A2C474C6C006087B6 /* ListAllAppsAppleError.swift */,
+				316F89C92C48676C003BD43A /* ListAllAppsAppleService.swift */,
+				316F89C72C48675A003BD43A /* ListAllAppsAppleUseCase.swift */,
+				3173E9512C5E788D00F71EFD /* ListAllAppsAppleUseCaseMock.swift */,
+			);
+			path = ListAllApps;
+			sourceTree = "<group>";
+		};
+		3171D0892C59C00600591AE2 /* CreateAppVersion */ = {
+			isa = PBXGroup;
+			children = (
+				3171D08A2C59C02900591AE2 /* CreateAppVersionError.swift */,
+				31A61FEE2C5B11D60043B149 /* CreateAppVersionParams.swift */,
+				3171D08E2C59C07600591AE2 /* CreateAppVersionService.swift */,
+				3171D08C2C59C06100591AE2 /* CreateAppVersionUseCase.swift */,
+			);
+			path = CreateAppVersion;
+			sourceTree = "<group>";
+		};
+		317425F12C658021004B3A66 /* DeleteAppVersion */ = {
+			isa = PBXGroup;
+			children = (
+				317425F22C658043004B3A66 /* DeleteAppVersionError.swift */,
+				317425F42C658055004B3A66 /* DeleteAppVersionService.swift */,
+				317425F62C65805D004B3A66 /* DeleteAppVersionUseCase.swift */,
+				317425F82C658068004B3A66 /* DeleteAppVersionUseCaseMock.swift */,
+			);
+			path = DeleteAppVersion;
+			sourceTree = "<group>";
+		};
+		317425FA2C659955004B3A66 /* UpdateAppVersion */ = {
+			isa = PBXGroup;
+			children = (
+				317425FB2C659989004B3A66 /* UpdateAppVersionError.swift */,
+				317425FD2C659992004B3A66 /* UpdateAppVersionParams.swift */,
+				317425FF2C65999D004B3A66 /* UpdateAppVersionService.swift */,
+				317426012C6599AA004B3A66 /* UpdateAppVersionUseCase.swift */,
+			);
+			path = UpdateAppVersion;
+			sourceTree = "<group>";
+		};
 		3175A2E32C42C169004F947B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,30 +420,45 @@
 		3175A2E42C42C1C0004F947B /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				318BE5ED2C50830E00A10CAC /* AppBuildEntity.swift */,
+				318C636F2C4D9B7B00130B56 /* AppStoreVersionEntity.swift */,
+				318447382C46069300EF4750 /* ListAppItemEntity.swift */,
 				3192EA172C3F5E9900937003 /* PrivateKeyInfoData.swift */,
-				3175A2F02C42C8D9004F947B /* SetItemKeyChainParams.swift */,
-				317EE4842C448481004BC87B /* AppStoreJWTClaims.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		3175A2E82C42C399004F947B /* Protocols */ = {
+		3175A2E82C42C399004F947B /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				318447362C45FE6800EF4750 /* ListAppItemModel.swift */,
 				3175A2FB2C42DEB2004F947B /* Injector.swift */,
-				3175A2E62C42C311004F947B /* KeyChainService.swift */,
-				3175A30C2C431E8E004F947B /* LocalAuthService.swift */,
 				3175A2E92C42C3D7004F947B /* UseCase.swift */,
 			);
-			path = Protocols;
+			path = Interfaces;
 			sourceTree = "<group>";
 		};
 		3175A2EB2C42C499004F947B /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				3175A2EC2C42C5D4004F947B /* SaveItemKeyChainUseCase.swift */,
-				3175A2EE2C42C7EA004F947B /* GetItemKeyChainUseCase.swift */,
-				3175A3102C43229B004F947B /* LocalAuthenticationUseCase.swift */,
+				3169F4FB2C67FD4900D3AF99 /* GetAppVersionFromApp */,
+				3169F4F22C67E0CE00D3AF99 /* GetAppVersion */,
+				31A058E62C66CA8B00D1B1E1 /* ListAvailableAppBuilds */,
+				31A058DD2C66C43000D1B1E1 /* GetAppVersionBuild */,
+				318B7F672C5D8D49004901F7 /* AcceptCompliance */,
+				31A61FF02C5B17CE0043B149 /* AddBuildToRelease */,
+				3171D0892C59C00600591AE2 /* CreateAppVersion */,
+				318B7F772C5D9525004901F7 /* CreateNewRelease */,
+				317425F12C658021004B3A66 /* DeleteAppVersion */,
+				31425E322C47571F006087B6 /* GetItemKeyChain */,
+				318371732C5C668500278456 /* GetLocalizationFromRelease */,
+				31827E142C4F393800BB8746 /* ListAllAppBuilds */,
+				316F89C62C4866BA003BD43A /* ListAllApps */,
+				31425E332C475731006087B6 /* LocalAuth */,
+				31425E312C47570B006087B6 /* SaveItemKeyChain */,
+				318B7F682C5D8D6D004901F7 /* SubmitToReview */,
+				317425FA2C659955004B3A66 /* UpdateAppVersion */,
+				3183716A2C5C636C00278456 /* UpdateLocalization */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -146,8 +466,9 @@
 		3175A2F82C42DD35004F947B /* Injectors */ = {
 			isa = PBXGroup;
 			children = (
-				3175A2F92C42DE92004F947B /* KeyFormViewInjector.swift */,
+				3144DBBD2C62D67800CF4674 /* AppDetailsViewInjector.swift */,
 				3175A3192C432A5A004F947B /* HomeViewInjector.swift */,
+				3175A2F92C42DE92004F947B /* KeyFormViewInjector.swift */,
 				317EE48A2C44B481004BC87B /* ListAppsViewInjector.swift */,
 			);
 			path = Injectors;
@@ -156,8 +477,9 @@
 		31774B022C40B3C3003C8670 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				31774B002C40B3A2003C8670 /* KeyFormController.swift */,
+				3144DBBB2C62D65F00CF4674 /* AppDetailsController.swift */,
 				3175A3172C4329A4004F947B /* HomeController.swift */,
+				31774B002C40B3A2003C8670 /* KeyFormController.swift */,
 				317EE4882C44B3FD004BC87B /* ListAppsController.swift */,
 			);
 			path = Controllers;
@@ -166,8 +488,9 @@
 		31774B032C40B3E5003C8670 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				31774B042C40B415003C8670 /* KeyFormView.swift */,
+				318C63672C4D821900130B56 /* AppDetailsView.swift */,
 				3175A3152C432995004F947B /* HomeView.swift */,
+				31774B042C40B415003C8670 /* KeyFormView.swift */,
 				317EE4862C44B3E5004BC87B /* ListAppsView.swift */,
 			);
 			path = Views;
@@ -176,24 +499,145 @@
 		317EE4792C4471E5004BC87B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				317EE47C2C44729C004BC87B /* Config */,
 				317EE47A2C447208004BC87B /* AppStoreHTTPClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
 		};
-		317EE47C2C44729C004BC87B /* Enums */ = {
+		317EE47C2C44729C004BC87B /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				317EE4842C448481004BC87B /* AppStoreJWTClaims.swift */,
 				317EE47D2C4472BC004BC87B /* AppStoreEndpoints.swift */,
+				31425E2C2C474E6A006087B6 /* HTTPClientError.swift */,
 				317EE47F2C44745E004BC87B /* HTTPMethods.swift */,
 			);
-			path = Enums;
+			path = Config;
+			sourceTree = "<group>";
+		};
+		31827E142C4F393800BB8746 /* ListAllAppBuilds */ = {
+			isa = PBXGroup;
+			children = (
+				31827E192C4F399E00BB8746 /* ListAllAppBuildsError.swift */,
+				31827E172C4F399000BB8746 /* ListAllAppBuildsService.swift */,
+				31827E152C4F395D00BB8746 /* ListAllAppBuildsUseCase.swift */,
+				3173E94F2C5E77CF00F71EFD /* ListAllAppBuildsUseCaseMock.swift */,
+			);
+			path = ListAllAppBuilds;
+			sourceTree = "<group>";
+		};
+		3183716A2C5C636C00278456 /* UpdateLocalization */ = {
+			isa = PBXGroup;
+			children = (
+				3183716B2C5C63B800278456 /* UpdateLocalizationError.swift */,
+				3183716D2C5C63CE00278456 /* UpdateLocalizationParams.swift */,
+				3183716F2C5C63E800278456 /* UpdateLocalizationService.swift */,
+				318371712C5C63FF00278456 /* UpdateLocalizationUseCase.swift */,
+			);
+			path = UpdateLocalization;
+			sourceTree = "<group>";
+		};
+		318371732C5C668500278456 /* GetLocalizationFromRelease */ = {
+			isa = PBXGroup;
+			children = (
+				318371742C5C674900278456 /* GetLocalizationFromReleaseError.swift */,
+				318371762C5C676700278456 /* GetLocalizationFromReleaseService.swift */,
+				318371782C5C677100278456 /* GetLocalizationFromReleaseUseCase.swift */,
+			);
+			path = GetLocalizationFromRelease;
+			sourceTree = "<group>";
+		};
+		318447352C45FE1300EF4750 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3184473A2C4608C500EF4750 /* ListAppItemAppleModel.swift */,
+				318C636D2C4D9A4100130B56 /* AppStoreVersionModel.swift */,
+				31827E1B2C4F3AFF00BB8746 /* AppBuildModel.swift */,
+			);
+			name = Models;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		318B7F672C5D8D49004901F7 /* AcceptCompliance */ = {
+			isa = PBXGroup;
+			children = (
+				318B7F692C5D8E06004901F7 /* AcceptComplianceError.swift */,
+				318B7F752C5D9197004901F7 /* AcceptComplianceParams.swift */,
+				318B7F6B2C5D8E66004901F7 /* AcceptComplianceService.swift */,
+				318B7F6D2C5D8E70004901F7 /* AcceptComplianceUseCase.swift */,
+			);
+			path = AcceptCompliance;
+			sourceTree = "<group>";
+		};
+		318B7F682C5D8D6D004901F7 /* SubmitToReview */ = {
+			isa = PBXGroup;
+			children = (
+				318B7F6F2C5D8F27004901F7 /* SubmitToReviewError.swift */,
+				318B7F712C5D8F36004901F7 /* SubmitToReviewService.swift */,
+				318B7F732C5D8F4C004901F7 /* SubmitToReviewUseCase.swift */,
+			);
+			path = SubmitToReview;
+			sourceTree = "<group>";
+		};
+		318B7F772C5D9525004901F7 /* CreateNewRelease */ = {
+			isa = PBXGroup;
+			children = (
+				318B7F7A2C5D95C4004901F7 /* CreateNewReleaseError.swift */,
+				318B7F782C5D95BA004901F7 /* CreateNewReleaseParams.swift */,
+				318B7F7C2C5D95EF004901F7 /* CreateNewReleaseUseCase.swift */,
+				317425EF2C642F10004B3A66 /* CreateNewReleaseUseCaseMock.swift */,
+			);
+			path = CreateNewRelease;
+			sourceTree = "<group>";
+		};
+		318B7F832C5DC785004901F7 /* JaoStoreReleasesTests */ = {
+			isa = PBXGroup;
+			children = (
+				318B7F8B2C5DCD9E004901F7 /* UseCases */,
+				318B7F842C5DC785004901F7 /* JaoStoreReleasesTests.swift */,
+			);
+			path = JaoStoreReleasesTests;
+			sourceTree = "<group>";
+		};
+		318B7F8B2C5DCD9E004901F7 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				318B7F8E2C5DCE94004901F7 /* ListAllAppBuilds */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		318B7F8E2C5DCE94004901F7 /* ListAllAppBuilds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ListAllAppBuilds;
+			sourceTree = "<group>";
+		};
+		318C635F2C4C729400130B56 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				318C63622C4C72CE00130B56 /* ListAppItem.swift */,
+				318C63712C4DB12800130B56 /* LazyView.swift */,
+				3144DBBF2C62FB9100CF4674 /* CreateReleaseForm.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		318C63642C4C773700130B56 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				318C63652C4C774300130B56 /* Flags.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		3192E9FA2C3F50C000937003 = {
 			isa = PBXGroup;
 			children = (
 				3192EA052C3F50C000937003 /* JaoStoreReleases */,
+				318B7F832C5DC785004901F7 /* JaoStoreReleasesTests */,
 				3192EA042C3F50C000937003 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -202,6 +646,7 @@
 			isa = PBXGroup;
 			children = (
 				3192EA032C3F50C000937003 /* JaoStoreReleases.app */,
+				318B7F822C5DC785004901F7 /* JaoStoreReleasesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,17 +654,11 @@
 		3192EA052C3F50C000937003 /* JaoStoreReleases */ = {
 			isa = PBXGroup;
 			children = (
-				31774B022C40B3C3003C8670 /* Controllers */,
-				3175A2E42C42C1C0004F947B /* Entities */,
-				317EE47C2C44729C004BC87B /* Enums */,
-				3192EA1A2C3F681900937003 /* Extensions */,
-				3175A2F82C42DD35004F947B /* Injectors */,
-				3175A2E82C42C399004F947B /* Protocols */,
-				317EE4792C4471E5004BC87B /* Network */,
-				3175A2E32C42C169004F947B /* Resources */,
-				31EBC1052C41E24400684455 /* Services */,
+				31425E302C475345006087B6 /* Data */,
+				31425E2E2C4750B6006087B6 /* Domain */,
+				31425E2F2C475285006087B6 /* Presentation */,
 				3175A2EB2C42C499004F947B /* UseCases */,
-				31774B032C40B3E5003C8670 /* Views */,
+				3175A2E32C42C169004F947B /* Resources */,
 				3192EA192C3F66F700937003 /* Info.plist */,
 				3192EA112C3F50C100937003 /* JaoStoreReleases.entitlements */,
 				3192EA062C3F50C000937003 /* JaoStoreReleasesApp.swift */,
@@ -240,16 +679,50 @@
 			isa = PBXGroup;
 			children = (
 				3192EA1B2C3F682F00937003 /* UTTypeExtension.swift */,
-				31EBC1082C41E5F500684455 /* DataExtension.swift */,
+				3178D65A2C586A370047A57E /* Task.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		31A058DD2C66C43000D1B1E1 /* GetAppVersionBuild */ = {
+			isa = PBXGroup;
+			children = (
+				31A058DE2C66C46D00D1B1E1 /* GetAppVersionBuildError.swift */,
+				31A058E02C66C48A00D1B1E1 /* GetAppVersionBuildService.swift */,
+				31A058E22C66C49D00D1B1E1 /* GetAppVersionBuildUseCase.swift */,
+				31A058E42C66C4AF00D1B1E1 /* GetAppVersionBuildUseCaseMock.swift */,
+			);
+			path = GetAppVersionBuild;
+			sourceTree = "<group>";
+		};
+		31A058E62C66CA8B00D1B1E1 /* ListAvailableAppBuilds */ = {
+			isa = PBXGroup;
+			children = (
+				31A058E72C66CAD200D1B1E1 /* ListAvailableAppBuildsError.swift */,
+				31A058E92C66CAEC00D1B1E1 /* ListAvailableAppBuildsParams.swift */,
+				31A058ED2C66CB0B00D1B1E1 /* ListAvailableAppBuildsUseCase.swift */,
+				31A058EF2C66CB2000D1B1E1 /* ListAvailableAppBuildsUseCaseMock.swift */,
+			);
+			path = ListAvailableAppBuilds;
+			sourceTree = "<group>";
+		};
+		31A61FF02C5B17CE0043B149 /* AddBuildToRelease */ = {
+			isa = PBXGroup;
+			children = (
+				31A61FF12C5B188B0043B149 /* AddBuildToReleaseError.swift */,
+				31A61FF32C5B18EF0043B149 /* AddBuildToReleaseParams.swift */,
+				31A61FF52C5B190B0043B149 /* AddBuildToReleaseService.swift */,
+				31A61FF72C5B191C0043B149 /* AddBuildToReleaseUseCase.swift */,
+			);
+			path = AddBuildToRelease;
 			sourceTree = "<group>";
 		};
 		31EBC1052C41E24400684455 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3175A30E2C431F2E004F947B /* AuthServiceImpl.swift */,
+				31425E272C474722006087B6 /* AppStoreServiceImpl.swift */,
 				31EBC1062C41E2B700684455 /* KeyChainServiceImpl.swift */,
-				3175A30E2C431F2E004F947B /* LocalAuthServiceImpl.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -257,6 +730,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		318B7F812C5DC785004901F7 /* JaoStoreReleasesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 318B7F882C5DC785004901F7 /* Build configuration list for PBXNativeTarget "JaoStoreReleasesTests" */;
+			buildPhases = (
+				318B7F7E2C5DC785004901F7 /* Sources */,
+				318B7F7F2C5DC785004901F7 /* Frameworks */,
+				318B7F802C5DC785004901F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				318B7F872C5DC785004901F7 /* PBXTargetDependency */,
+			);
+			name = JaoStoreReleasesTests;
+			productName = JaoStoreReleasesTests;
+			productReference = 318B7F822C5DC785004901F7 /* JaoStoreReleasesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3192EA022C3F50C000937003 /* JaoStoreReleases */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3192EA142C3F50C100937003 /* Build configuration list for PBXNativeTarget "JaoStoreReleases" */;
@@ -289,6 +780,10 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					318B7F812C5DC785004901F7 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 3192EA022C3F50C000937003;
+					};
 					3192EA022C3F50C000937003 = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -312,11 +807,19 @@
 			projectRoot = "";
 			targets = (
 				3192EA022C3F50C000937003 /* JaoStoreReleases */,
+				318B7F812C5DC785004901F7 /* JaoStoreReleasesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		318B7F802C5DC785004901F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3192EA012C3F50C000937003 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,35 +833,121 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		318B7F7E2C5DC785004901F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				318B7F852C5DC785004901F7 /* JaoStoreReleasesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3192E9FF2C3F50C000937003 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				318B7F6E2C5D8E70004901F7 /* AcceptComplianceUseCase.swift in Sources */,
+				3169F4FA2C67E16800D3AF99 /* GetAppVersionUseCaseMock.swift in Sources */,
+				31827E1C2C4F3AFF00BB8746 /* AppBuildModel.swift in Sources */,
+				3184473B2C4608C500EF4750 /* ListAppItemAppleModel.swift in Sources */,
+				318371792C5C677200278456 /* GetLocalizationFromReleaseUseCase.swift in Sources */,
+				318B7F7D2C5D95EF004901F7 /* CreateNewReleaseUseCase.swift in Sources */,
+				318B7F792C5D95BA004901F7 /* CreateNewReleaseParams.swift in Sources */,
 				3192EA1C2C3F682F00937003 /* UTTypeExtension.swift in Sources */,
-				3175A2F12C42C8D9004F947B /* SetItemKeyChainParams.swift in Sources */,
+				318C63722C4DB12800130B56 /* LazyView.swift in Sources */,
+				318B7F742C5D8F4C004901F7 /* SubmitToReviewUseCase.swift in Sources */,
+				316F89D02C4877B7003BD43A /* SaveItemKeyChainError.swift in Sources */,
+				3175A2F12C42C8D9004F947B /* SaveItemKeyChainParams.swift in Sources */,
+				318B7F6C2C5D8E66004901F7 /* AcceptComplianceService.swift in Sources */,
 				317EE4802C44745E004BC87B /* HTTPMethods.swift in Sources */,
 				3175A2FA2C42DE92004F947B /* KeyFormViewInjector.swift in Sources */,
+				31425E282C474722006087B6 /* AppStoreServiceImpl.swift in Sources */,
+				316F89CC2C486A0A003BD43A /* LocalAuthError.swift in Sources */,
+				317425FC2C659989004B3A66 /* UpdateAppVersionError.swift in Sources */,
+				317425F02C642F10004B3A66 /* CreateNewReleaseUseCaseMock.swift in Sources */,
 				3192EA182C3F5E9900937003 /* PrivateKeyInfoData.swift in Sources */,
+				31A058E82C66CAD200D1B1E1 /* ListAvailableAppBuildsError.swift in Sources */,
+				31827E1A2C4F399E00BB8746 /* ListAllAppBuildsError.swift in Sources */,
+				3178D65B2C586A370047A57E /* Task.swift in Sources */,
 				31774B052C40B415003C8670 /* KeyFormView.swift in Sources */,
+				3183716C2C5C63B800278456 /* UpdateLocalizationError.swift in Sources */,
 				317EE4872C44B3E5004BC87B /* ListAppsView.swift in Sources */,
 				3175A2FC2C42DEB2004F947B /* Injector.swift in Sources */,
+				3169F4F42C67E11B00D3AF99 /* GetAppVersionError.swift in Sources */,
+				3144DBBE2C62D67800CF4674 /* AppDetailsViewInjector.swift in Sources */,
+				31A058E32C66C49D00D1B1E1 /* GetAppVersionBuildUseCase.swift in Sources */,
+				31425E2B2C474C6C006087B6 /* ListAllAppsAppleError.swift in Sources */,
+				318C636E2C4D9A4100130B56 /* AppStoreVersionModel.swift in Sources */,
+				31A61FF42C5B18EF0043B149 /* AddBuildToReleaseParams.swift in Sources */,
+				31A058E52C66C4AF00D1B1E1 /* GetAppVersionBuildUseCaseMock.swift in Sources */,
+				3144DBC02C62FB9100CF4674 /* CreateReleaseForm.swift in Sources */,
+				318B7F7B2C5D95C4004901F7 /* CreateNewReleaseError.swift in Sources */,
 				31EBC1072C41E2B700684455 /* KeyChainServiceImpl.swift in Sources */,
+				317426022C6599AA004B3A66 /* UpdateAppVersionUseCase.swift in Sources */,
+				318371752C5C674900278456 /* GetLocalizationFromReleaseError.swift in Sources */,
 				3175A30D2C431E8E004F947B /* LocalAuthService.swift in Sources */,
 				3175A2EF2C42C7EA004F947B /* GetItemKeyChainUseCase.swift in Sources */,
+				3171D08F2C59C07600591AE2 /* CreateAppVersionService.swift in Sources */,
 				3175A3162C432995004F947B /* HomeView.swift in Sources */,
+				31A61FF62C5B190B0043B149 /* AddBuildToReleaseService.swift in Sources */,
+				318447392C46069300EF4750 /* ListAppItemEntity.swift in Sources */,
 				317EE47E2C4472BC004BC87B /* AppStoreEndpoints.swift in Sources */,
-				3175A3112C43229B004F947B /* LocalAuthenticationUseCase.swift in Sources */,
-				31EBC1092C41E5F500684455 /* DataExtension.swift in Sources */,
+				3173E9522C5E788D00F71EFD /* ListAllAppsAppleUseCaseMock.swift in Sources */,
+				3169F4FF2C67FD7A00D3AF99 /* GetAppVersionFromAppService.swift in Sources */,
+				3175A3112C43229B004F947B /* LocalAuthUseCase.swift in Sources */,
+				3183716E2C5C63CE00278456 /* UpdateLocalizationParams.swift in Sources */,
+				31A058EA2C66CAEC00D1B1E1 /* ListAvailableAppBuildsParams.swift in Sources */,
+				3169F4FD2C67FD6E00D3AF99 /* GetAppVersionFromAppError.swift in Sources */,
 				3175A31A2C432A5A004F947B /* HomeViewInjector.swift in Sources */,
-				3175A2E72C42C311004F947B /* KeyChainService.swift in Sources */,
+				318B7F702C5D8F27004901F7 /* SubmitToReviewError.swift in Sources */,
+				3173E9502C5E77CF00F71EFD /* ListAllAppBuildsUseCaseMock.swift in Sources */,
+				318371722C5C63FF00278456 /* UpdateLocalizationUseCase.swift in Sources */,
+				318B7F762C5D9197004901F7 /* AcceptComplianceParams.swift in Sources */,
+				3175A2E72C42C311004F947B /* SaveItemKeyChainService.swift in Sources */,
+				318C63682C4D821900130B56 /* AppDetailsView.swift in Sources */,
+				316F89CE2C487690003BD43A /* GetItemKeyChainError.swift in Sources */,
+				31A058EE2C66CB0B00D1B1E1 /* ListAvailableAppBuildsUseCase.swift in Sources */,
+				317425FE2C659992004B3A66 /* UpdateAppVersionParams.swift in Sources */,
+				317425F52C658055004B3A66 /* DeleteAppVersionService.swift in Sources */,
+				31A058E12C66C48A00D1B1E1 /* GetAppVersionBuildService.swift in Sources */,
 				317EE4892C44B3FD004BC87B /* ListAppsController.swift in Sources */,
+				317425F92C658068004B3A66 /* DeleteAppVersionUseCaseMock.swift in Sources */,
+				3171D08B2C59C02900591AE2 /* CreateAppVersionError.swift in Sources */,
+				318B7F6A2C5D8E06004901F7 /* AcceptComplianceError.swift in Sources */,
+				31A058F02C66CB2000D1B1E1 /* ListAvailableAppBuildsUseCaseMock.swift in Sources */,
+				316F89C82C48675A003BD43A /* ListAllAppsAppleUseCase.swift in Sources */,
+				317425F32C658043004B3A66 /* DeleteAppVersionError.swift in Sources */,
+				31A61FF82C5B191C0043B149 /* AddBuildToReleaseUseCase.swift in Sources */,
+				318BE5EE2C50830E00A10CAC /* AppBuildEntity.swift in Sources */,
 				3175A2EA2C42C3D7004F947B /* UseCase.swift in Sources */,
-				3175A30F2C431F2E004F947B /* LocalAuthServiceImpl.swift in Sources */,
+				317425F72C65805D004B3A66 /* DeleteAppVersionUseCase.swift in Sources */,
+				3144DBBC2C62D65F00CF4674 /* AppDetailsController.swift in Sources */,
+				3169F4F82C67E15600D3AF99 /* GetAppVersionService.swift in Sources */,
+				3175A30F2C431F2E004F947B /* AuthServiceImpl.swift in Sources */,
+				318B7F722C5D8F36004901F7 /* SubmitToReviewService.swift in Sources */,
+				318C63662C4C774300130B56 /* Flags.swift in Sources */,
 				3192EA072C3F50C000937003 /* JaoStoreReleasesApp.swift in Sources */,
+				31827E182C4F399000BB8746 /* ListAllAppBuildsService.swift in Sources */,
+				318C63702C4D9B7B00130B56 /* AppStoreVersionEntity.swift in Sources */,
 				317EE47B2C447208004BC87B /* AppStoreHTTPClient.swift in Sources */,
+				31A61FEF2C5B11D60043B149 /* CreateAppVersionParams.swift in Sources */,
+				318371772C5C676700278456 /* GetLocalizationFromReleaseService.swift in Sources */,
 				31774B012C40B3A2003C8670 /* KeyFormController.swift in Sources */,
+				318447372C45FE6800EF4750 /* ListAppItemModel.swift in Sources */,
+				31A61FF22C5B188B0043B149 /* AddBuildToReleaseError.swift in Sources */,
+				318C63632C4C72CE00130B56 /* ListAppItem.swift in Sources */,
+				3171D08D2C59C06100591AE2 /* CreateAppVersionUseCase.swift in Sources */,
+				3169F5012C67FD8B00D3AF99 /* GetAppVersionFromAppUseCase.swift in Sources */,
+				31A058DF2C66C46D00D1B1E1 /* GetAppVersionBuildError.swift in Sources */,
+				3169F5032C67FD9D00D3AF99 /* GetAppVersionFromAppUseCaseMock.swift in Sources */,
+				318371702C5C63E800278456 /* UpdateLocalizationService.swift in Sources */,
 				3175A3182C4329A4004F947B /* HomeController.swift in Sources */,
+				31425E352C4758EA006087B6 /* GetItemKeyChainService.swift in Sources */,
+				3169F4F62C67E14300D3AF99 /* GetAppVersionUseCase.swift in Sources */,
 				317EE48B2C44B481004BC87B /* ListAppsViewInjector.swift in Sources */,
+				31425E2D2C474E6A006087B6 /* HTTPClientError.swift in Sources */,
+				317426002C65999D004B3A66 /* UpdateAppVersionService.swift in Sources */,
+				316F89CA2C48676C003BD43A /* ListAllAppsAppleService.swift in Sources */,
+				31827E162C4F395D00BB8746 /* ListAllAppBuildsUseCase.swift in Sources */,
 				317EE4852C448481004BC87B /* AppStoreJWTClaims.swift in Sources */,
 				3175A2ED2C42C5D4004F947B /* SaveItemKeyChainUseCase.swift in Sources */,
 			);
@@ -366,7 +955,49 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		318B7F872C5DC785004901F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3192EA022C3F50C000937003 /* JaoStoreReleases */;
+			targetProxy = 318B7F862C5DC785004901F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		318B7F892C5DC785004901F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WJAZ3XSD4V;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.jao.app.JaoStoreReleasesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JaoStoreReleases.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JaoStoreReleases";
+			};
+			name = Debug;
+		};
+		318B7F8A2C5DC785004901F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WJAZ3XSD4V;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.jao.app.JaoStoreReleasesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JaoStoreReleases.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JaoStoreReleases";
+			};
+			name = Release;
+		};
 		3192EA122C3F50C100937003 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -546,6 +1177,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		318B7F882C5DC785004901F7 /* Build configuration list for PBXNativeTarget "JaoStoreReleasesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				318B7F892C5DC785004901F7 /* Debug */,
+				318B7F8A2C5DC785004901F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3192E9FE2C3F50C000937003 /* Build configuration list for PBXProject "JaoStoreReleases" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
