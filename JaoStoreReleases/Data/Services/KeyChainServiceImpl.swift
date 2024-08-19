@@ -8,7 +8,7 @@
 import Foundation
 import Security
 
-class KeyChainServiceImpl: GetItemKeyChainService, SaveItemKeyChainService {
+class KeyChainServiceImpl: GetItemKeyChainService, SaveItemKeyChainService, RemoveItemKeyChainService {
     func saveItem(key: String, data: Data) -> Result<Void, SaveItemKeyChainError> {
         let query = [
             kSecClass as String  : kSecClassGenericPassword,
@@ -48,5 +48,20 @@ class KeyChainServiceImpl: GetItemKeyChainService, SaveItemKeyChainService {
         }
         
         return .success(data)
+    }
+    
+    func removeItemKeyChain(key: String) -> Result<Void, RemoveItemKeyChainError> {
+        let query = [
+            kSecClass as String  : kSecClassGenericPassword,
+            kSecAttrAccount as String : key
+        ] as [String : Any]
+        
+        let status = SecItemDelete(query as CFDictionary)
+        
+        if status != errSecSuccess {
+            return .failure(.failedToRemove)
+        }
+        
+        return .success(())
     }
 }

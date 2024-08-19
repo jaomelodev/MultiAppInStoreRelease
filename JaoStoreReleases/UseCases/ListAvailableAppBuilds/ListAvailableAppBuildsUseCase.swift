@@ -10,10 +10,10 @@ import Foundation
 class ListAvailableAppBuildsUseCase: UseCase<ListAvailableAppBuildsParams, [AppBuildEntity], ListAvailableAppBuildsError> {}
 
 class ListAvailableAppBuildsUseCaseImpl: ListAvailableAppBuildsUseCase {
-    let listAllAppBuildsUseCase: ListAllAppBuildsUseCase
+    let listAllAppBuildsUseCase: ListAppBuildsUseCase
     let getAppVersionBuildUseCase: GetAppVersionBuildUseCase
     
-    init(listAllAppBuildsUseCase: ListAllAppBuildsUseCase, getAppVersionBuildUseCase: GetAppVersionBuildUseCase) {
+    init(listAllAppBuildsUseCase: ListAppBuildsUseCase, getAppVersionBuildUseCase: GetAppVersionBuildUseCase) {
         self.listAllAppBuildsUseCase = listAllAppBuildsUseCase
         self.getAppVersionBuildUseCase = getAppVersionBuildUseCase
     }

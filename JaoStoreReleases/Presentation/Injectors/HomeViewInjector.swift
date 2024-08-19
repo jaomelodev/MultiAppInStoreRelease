@@ -7,30 +7,20 @@
 
 import Foundation
 
-class HomeViewInjector: Injector {
-    override func registerDependencies() {
+class HomeViewInjector: Injector<HomeController> {
+    override func registerDependencies() -> HomeController {
         let authService = AuthServiceImpl()
         
-        container.register(LocalAuthService.self) { _ in authService}
-        
-        container.register(LocalAuthUseCase.self) { resolver in
-            LocalAuthUseCaseImpl(localAuthService: resolver.resolve(LocalAuthService.self)!)
-        }
+        let localAuthUseCase = LocalAuthUseCaseImpl(localAuthService: authService)
         
         let keyChainService = KeyChainServiceImpl()
         
-        container.register(GetItemKeyChainService.self) { _ in keyChainService}
+        let getItemKeyChainUseCase = GetItemKeyChainUseCaseImpl(getItemKeyChainService: keyChainService)
         
-        container.register(GetItemKeyChainUseCase.self) { resolver in
-            GetItemKeyChainUseCaseImpl(getItemKeyChainService: resolver.resolve(GetItemKeyChainService.self)!)
-        }
-        
-        container.register(HomeController.self) { resolver in
-            HomeController(
-                localAuthUseCase: resolver.resolve(LocalAuthUseCase.self)!,
-                getItemKeyChainUseCase: resolver.resolve(GetItemKeyChainUseCase.self)!
-            )
-        }
+        return HomeController(
+            localAuthUseCase: localAuthUseCase,
+            getItemKeyChainUseCase: getItemKeyChainUseCase
+        )
     }
 }
 

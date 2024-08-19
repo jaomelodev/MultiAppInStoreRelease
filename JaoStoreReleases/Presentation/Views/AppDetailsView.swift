@@ -68,10 +68,36 @@ struct AppDetailsView: View {
                     
                     Spacer()
                     
-                    if case .appBuilds(_) = controller.appBuildsState {
+                    if case .pendingDeveloperRelease = controller.appItem.appStoreVersion?.state {
                         VStack {
                             Button {
-                                controller.showCreateReleaseForm = true
+                                controller.openCreateReleaseForm()
+                            } label: {
+                                VStack {
+                                    Image(systemName: "checkmark.square")
+                                        .resizable()
+                                        .frame(width: 17, height: 17)
+                                    
+                                    Text("Release this\nversion")
+                                        .font(.caption)
+                                        .multilineTextAlignment(.center)
+                                }
+                                
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            .sheet(isPresented: $controller.showReleaseVersionDialog) {
+                                ReleaseAppVersionDialog(
+                                    appDetailsController: controller
+                                )
+                            }
+                        }
+                    }
+                    
+                    if case .appBuilds(_) = controller.appBuildsState,                              controller.appItem.appStoreVersion?.state != .waitingForReview,
+                       controller.appItem.appStoreVersion?.state != .pendingDeveloperRelease {
+                        VStack {
+                            Button {
+                                controller.openCreateReleaseForm()
                             } label: {
                                 VStack {
                                     Image(systemName: "plus.app")
@@ -245,11 +271,13 @@ struct AppDetailsView: View {
 }
 
 #Preview {
-    let listAvailableAppBuildsUseCase = ListAvailableAppBuildsUseCaseMock(result: .failure(.failedToListAllBuilds))
+    let listAvailableAppBuildsUseCase = ListAvailableAppBuildsUseCaseMock()
     
     let createNewReleaseUseCase = CreateNewReleaseUseCaseMock()
     
-    let getAppVersionFromAppUseCase = GetAppVersionFromAppUseCaseMock()
+    let getAppVersionFromAppUseCase = GetAppAppVersionUseCaseMock()
+    
+    let releaseAppVersionUseCase = ReleaseAppVersionUseCaseMock()
     
     let listAppItem = ListAppItemEntity(
         id: "asdfasdf",
@@ -259,7 +287,7 @@ struct AppDetailsView: View {
         imageUrl: "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/78/98/66/7898667a-28f6-80a3-c7a3-118585cf6d69/AppIcon-prod60x60@2x.png/120x120bb.png",
         appStoreVersion: AppStoreVersionEntity(
             id: "132132132",
-            state: .accepted,
+            state: .pendingDeveloperRelease,
             versionString: "2024.07.15"
         )
     )
@@ -268,11 +296,12 @@ struct AppDetailsView: View {
         appItem: listAppItem,
         listAvailableAppBuildsUseCase: listAvailableAppBuildsUseCase,
         createNewReleaseUseCase: createNewReleaseUseCase,
-        getAppVersionFromAppUseCase: getAppVersionFromAppUseCase
+        getAppVersionFromAppUseCase: getAppVersionFromAppUseCase,
+        releaseAppVersionUseCase: releaseAppVersionUseCase
     ) { appItem in
         print(appItem)
     }
-
+    
     return AppDetailsView(
         controller: controller
     )

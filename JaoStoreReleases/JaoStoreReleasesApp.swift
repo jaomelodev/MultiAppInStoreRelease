@@ -13,7 +13,7 @@ struct JaoStoreReleasesApp: App {
         WindowGroup {
             let homeViewInjector = HomeViewInjector()
             
-            HomeView(controller:  homeViewInjector.container.resolve(HomeController.self)!)
+            HomeView(controller:  homeViewInjector.registerDependencies())
         }
     }
 }

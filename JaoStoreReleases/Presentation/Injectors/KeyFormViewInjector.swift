@@ -5,31 +5,28 @@
 //  Created by João Melo on 13/07/24.
 //
 
-import Foundation
+import SwiftUI
 
-class KeyFormViewInjector: Injector {
-    override func registerDependencies() {
+class KeyFormViewInjector: Injector<KeyFormController> {
+    let hasKeySaved: Binding<Bool>
+    
+    init(hasKeySaved: Binding<Bool>) {
+        self.hasKeySaved = hasKeySaved
+    }
+    
+    override func registerDependencies() -> KeyFormController {
         let authService = AuthServiceImpl()
         
-        container.register(LocalAuthService.self) { _ in authService }
-        
-        container.register(LocalAuthUseCase.self) { resolver in
-            LocalAuthUseCaseImpl(localAuthService: resolver.resolve(LocalAuthService.self)!)
-        }
+        let localAuthUseCase = LocalAuthUseCaseImpl(localAuthService: authService)
         
         let keyChainService = KeyChainServiceImpl()
         
-        container.register(SaveItemKeyChainService.self) { _ in keyChainService }
+        let saveItemKeyChainUseCase = SaveItemKeyChainUseCaseImpl(saveItemKeyChainService: keyChainService)
         
-        container.register(SaveItemKeyChainUseCase.self) { resolver in
-            SaveItemKeyChainUseCaseImpl(saveItemKeyChainService: resolver.resolve(SaveItemKeyChainService.self)!)
-        }
-        
-        container.register(KeyFormController.self) { resolver in
-            KeyFormController(
-                localAuthUseCase: resolver.resolve(LocalAuthUseCase.self)!,
-                saveItemKeyChainUseCase: resolver.resolve(SaveItemKeyChainUseCase.self)!
-            )
-        }
+        return KeyFormController(
+            hasKeySaved: hasKeySaved,
+            localAuthUseCase: localAuthUseCase,
+            saveItemKeyChainUseCase: saveItemKeyChainUseCase
+        )
     }
 }

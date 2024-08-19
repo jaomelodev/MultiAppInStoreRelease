@@ -11,72 +11,133 @@ struct CreateReleaseForm: View {
     @StateObject var appDetailsController: AppDetailsController
     
     var body: some View {
-        Form {
-            Section(header: Text("Version (e.g., 2024.08.06)")) {
-                TextField("", text: $appDetailsController.versionString)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.bottom, 20)
-            }
-            
-            Section(header: Text("Release Notes")) {
-                TextEditor(text: $appDetailsController.releaseNotes)
-                    .frame(height: 100)
-                    .border(Color.gray, width: 1)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.bottom, 20)
-            }
-            
-            if case .appBuilds(let builds) = appDetailsController.appBuildsState {
-                Section(header: Text("Build Selection")) {
-                    Picker("", selection: $appDetailsController.selectedBuild) {
-                        Text("Select a build")
-                            .tag("")
-                        
-                        ForEach(builds.filter { $0.buildState == .valid }) { build in
-                            Text(build.version)
-                                .tag(build.id)
-                        }
-                    }
-                    .pickerStyle(MenuPickerStyle())
-                    .padding(.bottom, 20)
+        VStack {
+            switch appDetailsController.createAppVersionState {
+            case .loading(let loadingMessage):
+                VStack {
+                    Spacer()
+                    ProgressView(loadingMessage)
+                    Spacer()
                 }
-            }
-            
-            Section {
-                Toggle("Uses Non Exempt Encryption", isOn: $appDetailsController.usesNonExemptEncryption)
-                    .padding(.bottom, 20)
-            }
-            
-            Section {
-                HStack {
-                    Button("Cancel") {
-                        appDetailsController.showCreateReleaseForm = false
-                    }
-                    .buttonStyle(.bordered)
-                    .cornerRadius(5)
-                    
+                .frame(height: 300)
+            case .versionCreated:
+                VStack {
                     Spacer()
                     
-                    Text(appDetailsController.createNewVersionControllerError)
-                        .foregroundColor(.red)
+                    Image(systemName: "app.badge.checkmark")
+                        .resizable()
+                        .frame(width: 35, height: 30)
+                        .padding(.bottom, 10)
+                    
+                    Text("Your release was created!")
+                    Text("Now your app is on review in App Store Connect.")
                     
                     Spacer()
+                }
+                .foregroundColor(.green)
+                .frame(height: 300)
+            case .error:
+                VStack {
+                    Spacer()
+                    
+                    Image(systemName: "xmark.app")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .padding(.bottom, 10)
+                    
+                    Text("Could not create your release!")
+                    Text("If the error persists, verify on App Store Connect if everything's ok")
+                    
+                    Spacer()
+                }
+                .foregroundColor(.red)
+                .frame(height: 300)
+            case .idle:
+                Form {
+                    Section(header: Text("Version (e.g., 2024.08.06)")) {
+                        VStack {
+                            TextEditor(text: $appDetailsController.versionString)
+                                .textEditorStyle(.plain)
+                                .font(.body)
+                                .scrollIndicators(.never)
+                                .frame(height: 15)
+                        }
+                        .padding(5)
+                        .background(.black.opacity(0.2))
+                        .cornerRadius(5)
+                        .padding(.bottom, 20)
+                    }
+                    
+                    Section(header: Text("Release Notes")) {
+                        VStack {
+                            TextEditor(text: $appDetailsController.releaseNotes)
+                                .textEditorStyle(.plain)
+                                .font(.body)
+                                .scrollIndicators(.never)
+                                .frame(height: 100)
+                        }
+                        .padding(5)
+                        .background(.black.opacity(0.2))
+                        .cornerRadius(5)
+                        .padding(.bottom, 20)
+                    }
                     
                     
-                    Button("Submit") {
-                        Task {
-                            await appDetailsController.createNewReleaseForApp()
+                    
+                    if case .appBuilds(let builds) = appDetailsController.appBuildsState {
+                        Section(header: Text("Build Selection")) {
+                            Picker("", selection: $appDetailsController.selectedBuild) {
+                                Text("Select a build")
+                                    .tag("")
+                                
+                                ForEach(builds.filter { $0.buildState == .valid }) { build in
+                                    Text(build.version)
+                                        .tag(build.id)
+                                }
+                            }
+                            .pickerStyle(MenuPickerStyle())
+                            .padding(.bottom, 20)
                         }
                     }
-                    .buttonStyle(.bordered)
-                    .background(.blue)
-                    .cornerRadius(5)
+                    
+                    Section {
+                        Toggle("Uses Non Exempt Encryption", isOn: $appDetailsController.usesNonExemptEncryption)
+                            .padding(.bottom, 20)
+                    }
+                    
+                    Section {
+                        HStack {
+                            Button("Cancel") {
+                                appDetailsController.showCreateReleaseForm = false
+                            }
+                            .buttonStyle(.bordered)
+                            .cornerRadius(5)
+                            
+                            Spacer()
+                            
+                            Text(appDetailsController.createNewVersionFormError)
+                                .foregroundColor(.red)
+                            
+                            Spacer()
+                            
+                            
+                            Button("Submit") {
+                                Task {
+                                    await appDetailsController.createNewReleaseForApp()
+                                }
+                            }
+                            .buttonStyle(.bordered)
+                            .background(.blue)
+                            .cornerRadius(5)
+                        }
+                    }
                 }
+                .padding()
             }
         }
-        .padding()
         .navigationTitle("Release Form")
         .frame(width: 450)
+        .animation(.easeIn, value: appDetailsController.createAppVersionState)
     }
 }
 
@@ -85,7 +146,9 @@ struct CreateReleaseForm: View {
     
     let createNewReleaseUseCase = CreateNewReleaseUseCaseMock()
     
-    let getAppVersionFromAppUseCase = GetAppVersionFromAppUseCaseMock()
+    let getAppVersionFromAppUseCase = GetAppAppVersionUseCaseMock()
+    
+    let releaseAppVersionUseCase = ReleaseAppVersionUseCaseMock()
     
     let listAppItem = ListAppItemEntity(
         id: "asdfasdf",
@@ -104,7 +167,8 @@ struct CreateReleaseForm: View {
         appItem: listAppItem,
         listAvailableAppBuildsUseCase: listAvailableAppBuildsUseCase,
         createNewReleaseUseCase: createNewReleaseUseCase,
-        getAppVersionFromAppUseCase: getAppVersionFromAppUseCase
+        getAppVersionFromAppUseCase: getAppVersionFromAppUseCase,
+        releaseAppVersionUseCase: releaseAppVersionUseCase
     ) { appItem in
         print(appItem)
     }

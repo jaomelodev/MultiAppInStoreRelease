@@ -5,24 +5,32 @@
 //  Created by João Melo on 14/07/24.
 //
 
-import Foundation
+import SwiftUI
 
-class ListAppsViewInjector: Injector {
-    override func registerDependencies() {
+class ListAppsViewInjector: Injector<ListAppsController> {
+    let hasKeySaved: Binding<Bool>
+    
+    init(hasKeySaved: Binding<Bool>) {
+        self.hasKeySaved = hasKeySaved
+    }
+    
+    override func registerDependencies() -> ListAppsController {
         let client = AppStoreHTTPClient()
         
-        let appStoreService = AppStoreServiceImpl(appStoreClient: client)
+        let appStoreAppsService = AppStoreAppsService(appStoreClient: client)
         
-        container.register(ListAllAppsAppleService.self) { resolver in appStoreService }
+        let listAllAppsAppleUseCase = ListAllAppStoreAppsUseCaseImpl(listAllAppStoreAppsService: appStoreAppsService)
         
-        container.register(ListAllAppsAppleUseCase.self) { resolver in
-            ListAllAppsAppleUseCaseImpl(appStoreService: resolver.resolve(ListAllAppsAppleService.self)!)
-        }
+        let keyChainService = KeyChainServiceImpl()
         
-        container.register(ListAppsController.self) { resolver in
-            ListAppsController(
-                listAllAppsAppleUseCase: resolver.resolve(ListAllAppsAppleUseCase.self)!
-            )
-        }
+        let removeItemKeyChainUseCase = RemoveItemKeyChainUseCaseImpl(
+            removeItemKeyChainService: keyChainService
+        )
+        
+        return ListAppsController(
+            hasKeySaved: hasKeySaved,
+            listAllAppsAppleUseCase: listAllAppsAppleUseCase,
+            removeItemKeyChainUseCase: removeItemKeyChainUseCase
+        )
     }
 }

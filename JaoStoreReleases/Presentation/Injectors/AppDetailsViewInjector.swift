@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class AppDetailsViewInjector: InjectorTest<AppDetailsController> {
+class AppDetailsViewInjector: Injector<AppDetailsController> {
     let appItem: ListAppItemEntity
     let updateItemOnAppList: (ListAppItemEntity) -> Void
     
@@ -23,22 +23,25 @@ class AppDetailsViewInjector: InjectorTest<AppDetailsController> {
     override func registerDependencies() -> AppDetailsController {
         let client = AppStoreHTTPClient()
         
-        let appStoreService = AppStoreServiceImpl(appStoreClient: client)
+        let appStoreBuildsService = AppStoreBuildsService(appStoreClient: client)
+        let appStoreLocalizationService = AppStoreLocalizationsService(appStoreClient: client)
+        let appStoreReviewService = AppStoreReviewService(appStoreClient: client)
+        let appStoreAppVersionService = AppStoreAppVersionService(appStoreClient: client)
         
-        let listAllAppBuildsUseCase = ListAllAppBuildsUseCaseImpl(listAllAppBuildsService: appStoreService)
-        let getAppVersionBuildUseCase = GetAppVersionBuildUseCaseImpl(getAppVersionBuildService: appStoreService)
+        let listAllAppBuildsUseCase = ListAppBuildsUseCaseImpl(listAppBuildsService: appStoreBuildsService)
+        let getAppVersionBuildUseCase = GetAppVersionBuildUseCaseImpl(getAppVersionBuildService: appStoreBuildsService)
         let listAvailableAppBuildsUseCase = ListAvailableAppBuildsUseCaseImpl(
             listAllAppBuildsUseCase: listAllAppBuildsUseCase,
             getAppVersionBuildUseCase: getAppVersionBuildUseCase
         )
 
-        let createAppVersionUseCase = CreateAppVersionUseCaseImpl(createAppVersionService: appStoreService)
-        let updateAppVersionUseCase = UpdateAppVersionUseCaseImpl(updateAppVersionService: appStoreService)
-        let addBuildToReleaseUseCase = AddBuildToReleaseUseCaseImpl(addBuildToReleaseService: appStoreService)
-        let getLocalizationFromReleaseUseCase = GetLocalizationFromReleaseUseCaseImpl(getLocalizationFromReleaseService: appStoreService)
-        let updateLocalizationUseCase = UpdateLocalizationUseCaseImpl(addLocalizationToReleaseService: appStoreService)
-        let acceptComplianceUseCase = AcceptComplianceUseCaseImpl(acceptComplianceService: appStoreService)
-        let submitToReviewUseCase = SubmitToReviewUseCaseImpl(submitToReviewService: appStoreService)
+        let createAppVersionUseCase = CreateAppVersionUseCaseImpl(createAppVersionService: appStoreAppVersionService)
+        let updateAppVersionUseCase = UpdateAppVersionUseCaseImpl(updateAppVersionService: appStoreAppVersionService)
+        let addBuildToReleaseUseCase = AddBuildToAppVersionUseCaseImpl(addBuildToAppVersionService: appStoreBuildsService)
+        let getLocalizationFromReleaseUseCase = GetAppVersionLocalizationUseCaseImpl(getAppVersionLocalizationService: appStoreLocalizationService)
+        let updateLocalizationUseCase = UpdateLocalizationUseCaseImpl(addLocalizationToReleaseService: appStoreLocalizationService)
+        let acceptComplianceUseCase = AcceptBuildComplianceUseCaseImpl(acceptBuildComplianceService: appStoreBuildsService)
+        let submitToReviewUseCase = SubmitAppVersionToReviewUseCaseImpl(submitAppVersionToReviewService: appStoreReviewService)
 
         let createNewReleaseUseCase = CreateNewReleaseUseCaseImpl(
             createAppReleaseUseCase: createAppVersionUseCase,
@@ -50,7 +53,9 @@ class AppDetailsViewInjector: InjectorTest<AppDetailsController> {
             submitToReviewUseCase: submitToReviewUseCase
         )
 
-        let getAppVersionFromAppUseCase = GetAppVersionFromAppUseCaseImpl(getAppVersionFromAppService: appStoreService)
+        let getAppVersionFromAppUseCase = GetAppAppVersionUseCaseImpl(getAppAppVersionService: appStoreAppVersionService)
+        
+        let releaseAppVersionUseCase = ReleaseAppVersionUseCaseImpl(releaseAppVersionService: appStoreAppVersionService)
 
         // Manually instantiate the controller
         let appDetailsController = AppDetailsController(
@@ -58,6 +63,7 @@ class AppDetailsViewInjector: InjectorTest<AppDetailsController> {
             listAvailableAppBuildsUseCase: listAvailableAppBuildsUseCase,
             createNewReleaseUseCase: createNewReleaseUseCase,
             getAppVersionFromAppUseCase: getAppVersionFromAppUseCase,
+            releaseAppVersionUseCase: releaseAppVersionUseCase,
             updateItemOnAppList: self.updateItemOnAppList
         )
         

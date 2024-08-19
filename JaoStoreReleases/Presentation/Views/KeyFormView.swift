@@ -10,8 +10,6 @@ import SwiftUI
 struct KeyFormView: View {
     @StateObject var controller: KeyFormController
     
-    @Binding var hasKeySaved: Bool
-    
     var body: some View {
         HStack {
             Spacer()
@@ -79,11 +77,6 @@ struct KeyFormView: View {
             }
             Spacer()
         }
-        .onAppear {
-            controller.dismissAction = {
-                hasKeySaved = true
-            }
-        }
     }
 }
 
@@ -100,13 +93,13 @@ struct KeyFormView: View {
         saveItemKeyChainService: keyChainService
     )
     
-    let homeController = KeyFormController(
+    let keyFormController = KeyFormController(
+        hasKeySaved: .constant(true),
         localAuthUseCase: localAuthUseCase,
         saveItemKeyChainUseCase: saveItemKeyChainUseCase
     )
     
     return KeyFormView(
-        controller: homeController,
-        hasKeySaved: .constant(false)
+        controller: keyFormController
     )
 }

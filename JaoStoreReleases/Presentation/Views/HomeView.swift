@@ -19,15 +19,20 @@ struct HomeView: View {
                     ProgressView("Checking if your key is stored")
                 } else {
                     if controller.hasKeySaved {
-                        let listAppsViewInjector = ListAppsViewInjector()
+                        let listAppsViewInjector = ListAppsViewInjector(
+                            hasKeySaved: $controller.hasKeySaved
+                        )
                         
-                        ListAppsView(controller: listAppsViewInjector.container.resolve(ListAppsController.self)!)
+                        ListAppsView(
+                            controller: listAppsViewInjector.registerDependencies()
+                        )
                     } else {
-                        let keyFormViewInjector = KeyFormViewInjector()
+                        let keyFormViewInjector = KeyFormViewInjector(
+                            hasKeySaved: $controller.hasKeySaved
+                        )
                         
                         KeyFormView(
-                            controller: keyFormViewInjector.container.resolve(KeyFormController.self)!,
-                            hasKeySaved: $controller.hasKeySaved
+                            controller: keyFormViewInjector.registerDependencies()
                         )
                     }
                 }

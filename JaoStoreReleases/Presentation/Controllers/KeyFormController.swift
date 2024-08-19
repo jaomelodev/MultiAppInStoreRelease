@@ -5,13 +5,13 @@
 //  Created by João Melo on 11/07/24.
 //
 
-import Foundation
+import SwiftUI
 
 class KeyFormController: ObservableObject {
+    @Binding var hasKeySaved: Bool
+    
     let localAuthUseCase: LocalAuthUseCase
     let saveItemKeyChainUseCase: SaveItemKeyChainUseCase
-    
-    var dismissAction: (() -> Void) = {}
     
     @Published var keyIDFormField: String = ""
     @Published var keyIssuerFormField: String = ""
@@ -22,9 +22,11 @@ class KeyFormController: ObservableObject {
     @Published var errorMessage: String = ""
     
     init(
+        hasKeySaved: Binding<Bool>,
         localAuthUseCase: LocalAuthUseCase,
         saveItemKeyChainUseCase: SaveItemKeyChainUseCase
     ) {
+        self._hasKeySaved = hasKeySaved
         self.saveItemKeyChainUseCase = saveItemKeyChainUseCase
         self.localAuthUseCase = localAuthUseCase
     }
@@ -90,7 +92,9 @@ class KeyFormController: ObservableObject {
         }
         
         guard let keyData = readFile(fileUrl: selectedFile!) else {
-            errorMessage = "Could not read key content"
+            DispatchQueue.main.async {
+                self.errorMessage = "Could not read key content"
+            }
             
             return
         }
@@ -104,21 +108,28 @@ class KeyFormController: ObservableObject {
         let authResult = await localAuthUseCase.execute(NoParams())
         
         if case .failure(_) = authResult {
-            errorMessage = "Authentication Failed"
+            DispatchQueue.main.async {
+                self.errorMessage = "Authentication Failed"
+            }
             return
         }
         
         let saveItemResult = await saveItemKeyChainUseCase.execute(
-            SaveItemKeyChainParams(key: "privateKey", keyInfo: privateKeyInfoData)
+            SaveItemKeyChainParams(key: KeyChain.privateKeyName, keyInfo: privateKeyInfoData)
         )
         
         if case .failure(_) = saveItemResult {
-            errorMessage = "Could not save your key in Key Chain"
+            DispatchQueue.main.async {
+                self.errorMessage = "Could not save your key in Key Chain"
+            }
+            
             return
         }
         
         AppStoreHTTPClient.privateKeyInfo = privateKeyInfoData
         
-        dismissAction()
+        DispatchQueue.main.async {
+            self.hasKeySaved = true
+        }
     }
 }

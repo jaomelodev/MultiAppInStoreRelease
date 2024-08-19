@@ -5,11 +5,14 @@
 //  Created by João Melo on 14/07/24.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 
 class ListAppsController: ObservableObject {
-    let listAllAppsAppleUseCase: ListAllAppsAppleUseCase
+    @Binding var hasKeySaved: Bool
+    
+    let listAllAppsAppleUseCase: ListAllAppStoreAppsUseCase
+    let removeItemKeyChainUseCase: RemoveItemKeyChainUseCase
     
     @Published var apps: [ListAppItemEntity] = []
     @Published var loadingApps = false
@@ -17,10 +20,16 @@ class ListAppsController: ObservableObject {
     
     @Published var selectedApp: ListAppItemEntity?
     
+    @Published var showChangeAccountDialog: Bool = false
+    
     init(
-        listAllAppsAppleUseCase: ListAllAppsAppleUseCase
+        hasKeySaved: Binding<Bool>,
+        listAllAppsAppleUseCase: ListAllAppStoreAppsUseCase,
+        removeItemKeyChainUseCase: RemoveItemKeyChainUseCase
     ) {
+        self._hasKeySaved = hasKeySaved
         self.listAllAppsAppleUseCase = listAllAppsAppleUseCase
+        self.removeItemKeyChainUseCase = removeItemKeyChainUseCase
     }
     
     func listAllApps() async {
@@ -42,20 +51,16 @@ class ListAppsController: ObservableObject {
         }
     }
     
-    func changeItem() -> Void {
-        let listAppItem = ListAppItemEntity(
-            id: "asdfasdf",
-            appOrBundleId: "br.com.me",
-            name: "My App",
-            type: .apple,
-            imageUrl: "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/78/98/66/7898667a-28f6-80a3-c7a3-118585cf6d69/AppIcon-prod60x60@2x.png/120x120bb.png",
-            appStoreVersion: AppStoreVersionEntity(
-                id: "132132132",
-                state: .accepted,
-                versionString: "2024.07.15"
-            )
-        )
+    func changeAccount() async -> Void {
+        let response = await removeItemKeyChainUseCase.execute(KeyChain.privateKeyName)
         
-        apps[0] = listAppItem
+        DispatchQueue.main.async {
+            switch response {
+            case .success(_):
+                self.hasKeySaved = false
+            case .failure(_):
+                print("Failed to delete key info")
+            }
+        }
     }
 }

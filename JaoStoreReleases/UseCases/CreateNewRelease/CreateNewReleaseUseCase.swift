@@ -12,20 +12,20 @@ class CreateNewReleaseUseCase: UseCase<CreateNewReleaseParams, Void, CreateNewRe
 class CreateNewReleaseUseCaseImpl: CreateNewReleaseUseCase {
     let createAppVersionUseCase: CreateAppVersionUseCase
     let updateAppVersionUseCase: UpdateAppVersionUseCase
-    let addBuildToReleaseUseCase: AddBuildToReleaseUseCase
-    let getLocalizationFromReleaseUseCase: GetLocalizationFromReleaseUseCase
+    let addBuildToReleaseUseCase: AddBuildToAppVersionUseCase
+    let getLocalizationFromReleaseUseCase: GetAppVersionLocalizationUseCase
     let updateLocalizationUseCase: UpdateLocalizationUseCase
-    let acceptComplianceUseCase: AcceptComplianceUseCase
-    let submitToReviewUseCase: SubmitToReviewUseCase
+    let acceptComplianceUseCase: AcceptBuildComplianceUseCase
+    let submitToReviewUseCase: SubmitAppVersionToReviewUseCase
     
     init(
         createAppReleaseUseCase: CreateAppVersionUseCase,
         updateAppVersionUseCase: UpdateAppVersionUseCase,
-        addBuildToReleaseUseCase: AddBuildToReleaseUseCase,
-        getLocalizationFromReleaseUseCase: GetLocalizationFromReleaseUseCase,
+        addBuildToReleaseUseCase: AddBuildToAppVersionUseCase,
+        getLocalizationFromReleaseUseCase: GetAppVersionLocalizationUseCase,
         updateLocalizationUseCase: UpdateLocalizationUseCase,
-        acceptComplianceUseCase: AcceptComplianceUseCase,
-        submitToReviewUseCase: SubmitToReviewUseCase
+        acceptComplianceUseCase: AcceptBuildComplianceUseCase,
+        submitToReviewUseCase: SubmitAppVersionToReviewUseCase
     ) {
         self.createAppVersionUseCase = createAppReleaseUseCase
         self.updateAppVersionUseCase = updateAppVersionUseCase
@@ -53,6 +53,8 @@ class CreateNewReleaseUseCaseImpl: CreateNewReleaseUseCase {
             
             appVersionId = appVersionIdUpdate
         } else {
+            params.updateLoadingState("Updating current version...")
+            
             let createReleaseResponse = await createAppVersionUseCase.execute(
                 CreateAppVersionParams(
                     versionString: params.versionString,
@@ -67,12 +69,14 @@ class CreateNewReleaseUseCaseImpl: CreateNewReleaseUseCase {
             appVersionId = createdAppVersionId
         }
         
+        params.updateLoadingState("Adding build and what's new...")
+        
         // Use TaskGroup to run tasks in parallel
         let parallelResult = await withTaskGroup(of: Result<Void, CreateNewReleaseError>.self, returning: Result<Void, CreateNewReleaseError>.self) { group in
             // Adding build to release
             group.addTask {
                 let addBuildToReleaseResponse = await self.addBuildToReleaseUseCase.execute(
-                    AddBuildToReleaseParams(appReleaseId: appVersionId, buildId: params.buildId)
+                    AddBuildToAppVersionParams(appVersionId: appVersionId, buildId: params.buildId)
                 )
                 
                 if case .failure(_) = addBuildToReleaseResponse {
@@ -80,7 +84,7 @@ class CreateNewReleaseUseCaseImpl: CreateNewReleaseUseCase {
                 }
                 
                 let acceptComplianceResponse = await self.acceptComplianceUseCase.execute(
-                    AcceptComplianceParams(
+                    AcceptBuildComplianceParams(
                         buildId: params.buildId,
                         usesNonExemptEncryption: params.usesNonExemptEncryption
                     )
@@ -127,6 +131,8 @@ class CreateNewReleaseUseCaseImpl: CreateNewReleaseUseCase {
         if case .failure(let failure) = parallelResult {
             return .failure(failure)
         }
+        
+        params.updateLoadingState("Submitting to review...")
         
         let submitToReviewResponse = await submitToReviewUseCase.execute(appVersionId)
         

@@ -14,4 +14,5 @@ struct CreateNewReleaseParams {
     let whatsNew: String
     let buildId: String
     let usesNonExemptEncryption: Bool
+    let updateLoadingState: (String) -> Void
 }

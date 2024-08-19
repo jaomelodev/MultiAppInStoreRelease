@@ -53,18 +53,45 @@ struct ListAppsView: View {
                 await controller.listAllApps()
             }
         }
+        .confirmationDialog(
+            "Change account?",
+            isPresented: $controller.showChangeAccountDialog
+        ) {
+            Button("Confirm") {
+                Task {
+                    await controller.changeAccount()
+                }
+            }
+            Button("Cancel", role: .cancel) { }
+        } message: {
+            Text("Are you sure you want to change account?")
+        }
+        .toolbar {
+            ToolbarItem(placement: .automatic) {
+                Button {
+                    controller.showChangeAccountDialog = true
+                } label: {
+                    Text("Change account")
+                        .padding(5)
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    let client = AppStoreHTTPClient()
+    let listAllAppsUseCase = ListAllAppStoreAppsCaseMock()
     
-    let appStoreService = AppStoreServiceImpl(appStoreClient: client)
+    let keyChainService = KeyChainServiceImpl()
     
-    let listAllAppsUseCase = ListAllAppsAppleUseCaseImpl(appStoreService: appStoreService)
+    let removeItemKeyChainUseCase = RemoveItemKeyChainUseCaseImpl(
+        removeItemKeyChainService: keyChainService
+    )
     
     let controller = ListAppsController(
-        listAllAppsAppleUseCase: listAllAppsUseCase
+        hasKeySaved: .constant(true),
+        listAllAppsAppleUseCase: listAllAppsUseCase,
+        removeItemKeyChainUseCase: removeItemKeyChainUseCase
     )
     
     return ListAppsView(

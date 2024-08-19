@@ -24,10 +24,14 @@ class HomeController: ObservableObject {
     }
     
     func getKeyInStorate() async -> Void {
-        isLoading = true
+        DispatchQueue.main.async {
+            self.isLoading = true
+        }
         
         defer {
-            isLoading = false
+            DispatchQueue.main.async {
+                self.isLoading = false
+            }
         }
         
         let authResult = await localAuthUseCase.execute(NoParams())
@@ -37,10 +41,13 @@ class HomeController: ObservableObject {
             return
         }
         
-        let keyDataResult = await getItemKeyChainUseCase.execute("privateKey")
+        let keyDataResult = await getItemKeyChainUseCase.execute(KeyChain.privateKeyName)
         
         if case .failure(_) = keyDataResult {
-            hasKeySaved = false
+            DispatchQueue.main.async {
+                self.hasKeySaved = false
+            }
+            
             return
         }
         
@@ -48,6 +55,8 @@ class HomeController: ObservableObject {
         
         AppStoreHTTPClient.privateKeyInfo = keyData
         
-        hasKeySaved = true
+        DispatchQueue.main.async {
+            self.hasKeySaved = true
+        }
     }
 }

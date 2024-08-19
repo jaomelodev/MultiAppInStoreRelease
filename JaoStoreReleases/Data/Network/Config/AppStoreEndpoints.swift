@@ -19,6 +19,7 @@ enum AppStoreEndpoints {
     case appStoreVersionSubmissions
     case appVersions(appVersionId: String)
     case appVersionBuild(appVersionId: String)
+    case releaseRequest
     
     func path() -> String {
         switch self {
@@ -44,6 +45,8 @@ enum AppStoreEndpoints {
             return "/v1/appStoreVersions/\(appVersionId)"
         case .appVersionBuild(let appVersionId):
             return "/v1/appStoreVersions/\(appVersionId)/build"
+        case .releaseRequest:
+            return "/v1/appStoreVersionReleaseRequests"
         }
     }
 }

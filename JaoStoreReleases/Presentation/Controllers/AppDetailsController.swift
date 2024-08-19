@@ -13,7 +13,8 @@ class AppDetailsController: ObservableObject {
     
     let listAvailableAppBuildsUseCase: ListAvailableAppBuildsUseCase
     let createNewReleaseUseCase: CreateNewReleaseUseCase
-    let getAppVersionFromAppUseCase: GetAppVersionFromAppUseCase
+    let getAppVersionFromAppUseCase: GetAppAppVersionUseCase
+    let releaseAppVersionUseCase: ReleaseAppVersionUseCase
     
     let updateItemOnAppList: (ListAppItemEntity) -> Void
     
@@ -34,8 +35,27 @@ class AppDetailsController: ObservableObject {
     @Published var releaseNotes: String = ""
     @Published var selectedBuild: String = ""
     @Published var usesNonExemptEncryption: Bool = false
+    @Published var createNewVersionFormError: String = ""
     
-    @Published var createNewVersionControllerError: String = ""
+    enum CreateVersionState: Equatable {
+        case idle
+        case loading(String)
+        case versionCreated
+        case error
+    }
+    
+    @Published private(set) var createAppVersionState: CreateVersionState = .idle
+    
+    @Published var showReleaseVersionDialog = false
+    
+    enum ReleaseVersionState: Equatable {
+        case idle
+        case loading
+        case error
+        case success
+    }
+    
+    @Published private(set) var releaseVersionState: ReleaseVersionState = .idle
     
     @Published var getAppVersionLoading: Bool = false
     
@@ -43,13 +63,15 @@ class AppDetailsController: ObservableObject {
         appItem: ListAppItemEntity,
         listAvailableAppBuildsUseCase: ListAvailableAppBuildsUseCase,
         createNewReleaseUseCase: CreateNewReleaseUseCase,
-        getAppVersionFromAppUseCase: GetAppVersionFromAppUseCase,
+        getAppVersionFromAppUseCase: GetAppAppVersionUseCase,
+        releaseAppVersionUseCase: ReleaseAppVersionUseCase,
         updateItemOnAppList: @escaping (ListAppItemEntity) -> Void
     ) {
         self.appItem = appItem
         self.listAvailableAppBuildsUseCase = listAvailableAppBuildsUseCase
         self.createNewReleaseUseCase = createNewReleaseUseCase
         self.getAppVersionFromAppUseCase = getAppVersionFromAppUseCase
+        self.releaseAppVersionUseCase = releaseAppVersionUseCase
         self.updateItemOnAppList = updateItemOnAppList
     }
     
@@ -84,26 +106,36 @@ class AppDetailsController: ObservableObject {
         }.eraseToAnyCancellable()
     }
     
+    func openCreateReleaseForm() -> Void {
+        createAppVersionState = .idle
+        
+        showCreateReleaseForm = true
+    }
+    
     func validateForm() -> Bool {
-        createNewVersionControllerError = ""
+        createNewVersionFormError = ""
         
         versionString = versionString.trimmingCharacters(in: .whitespacesAndNewlines)
         releaseNotes = releaseNotes.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if versionString.isEmpty {
-            createNewVersionControllerError = "Invalid Version ID"
+            createNewVersionFormError = "Invalid Version ID"
         } else if releaseNotes.isEmpty {
-            createNewVersionControllerError = "Invalid Release Notes"
+            createNewVersionFormError = "Invalid Release Notes"
         } else if (selectedBuild.isEmpty) {
-            createNewVersionControllerError = "Select your build"
+            createNewVersionFormError = "Select your build"
         }
         
-        return createNewVersionControllerError.isEmpty
+        return createNewVersionFormError.isEmpty
     }
     
     func createNewReleaseForApp() async -> Void {
         if !validateForm() {
             return
+        }
+        
+        DispatchQueue.main.async {
+            self.createAppVersionState = .loading("Creating the version")
         }
         
         let response = await createNewReleaseUseCase.execute(
@@ -114,19 +146,37 @@ class AppDetailsController: ObservableObject {
                 whatsNew: releaseNotes,
                 buildId: selectedBuild,
                 usesNonExemptEncryption: usesNonExemptEncryption
-            )
+            ) { loadingMessage in
+                DispatchQueue.main.async {
+                    self.createAppVersionState = .loading(loadingMessage)
+                }
+            }
         )
         
         switch response {
-        case .success(let success):
+        case .success(_):
             DispatchQueue.main.async {
-                self.showCreateReleaseForm = false
+                self.createAppVersionState = .versionCreated
             }
             
-            await self.getAppVersion()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                self.showCreateReleaseForm = false
+                Task {
+                    await self.getAppVersion()
+                }
+                
+            }
         case .failure(_):
             DispatchQueue.main.async {
-                self.createNewVersionControllerError = "Could not create the release"
+                self.createAppVersionState = .error
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                self.showCreateReleaseForm = false
+                Task {
+                    await self.getAppVersion()
+                }
+                
             }
         }
     }
@@ -148,6 +198,31 @@ class AppDetailsController: ObservableObject {
             }
             
             self.getAppVersionLoading = false
+        }
+    }
+    
+    func releaseAppVersion() async -> Void {
+        guard let appVersion = appItem.appStoreVersion else {
+            return
+        }
+        
+        if appVersion.state != .pendingDeveloperRelease {
+            return
+        }
+        
+        DispatchQueue.main.async {
+            self.releaseVersionState = .loading
+        }
+        
+        let response = await releaseAppVersionUseCase.execute(appVersion.id)
+        
+        DispatchQueue.main.async {
+            switch response {
+            case .success(_):
+                self.releaseVersionState = .success
+            case .failure(_):
+                self.releaseVersionState = .error
+            }
         }
     }
 }
